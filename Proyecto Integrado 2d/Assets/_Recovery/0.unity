@@ -928,7 +928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1172527903424417374, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
       propertyPath: m_SortingOrder
-      value: 39
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2517135220111451973, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1047,7 +1047,11 @@ PrefabInstance:
       value: -0.58633286
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8887092694521036235, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
+    - {fileID: -1356264210715224609, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
+    - {fileID: 8093008244976099342, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
+    - {fileID: -8107815363859602631, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 4b0f430cc9c3b3e40a90be12774ca40e, type: 3}
       insertIndex: -1
