@@ -204,7 +204,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.25, y: -4.73, z: 0}
-  m_LocalScale: {x: 4.4375, y: 0.7476562, z: 1}
+  m_LocalScale: {x: 17.36172, y: 0.7476562, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1152,6 +1152,10 @@ PrefabInstance:
     - target: {fileID: 7693587362091862450, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
       propertyPath: m_Name
       value: Archivo_AtlasCharacter_Entrenador
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693587362091862450, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8794691305161675217, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
       propertyPath: m_LocalPosition.x
