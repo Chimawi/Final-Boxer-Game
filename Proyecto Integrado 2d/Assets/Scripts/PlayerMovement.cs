@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     
     
     private bool isAttacking = false;
-    private bool isBlocking = false; 
+    private bool isBlocking = false;
+    public bool ispunching = false;
 
     void Start()
     {
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         Collider2D[] objectsPunch = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
         foreach (Collider2D enemigo in objectsPunch)
         {
+            ispunching = true;
             Debug.Log("¡Golpeaste a " + enemigo.name + "!");
         }
     }
