@@ -1,0 +1,1256 @@
+fileFormatVersion: 2
+guid: 1329b8ed85b1a984281fb371d0109af2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: ad4a8d620ba6d4446beddbc34c6104ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: Foream__R_Doblado_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1001
+      width: 325
+      height: 311
+    spriteID: b320f9e2d56a2bc47a352d131af29b84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1001}
+    spritePosition: {x: 720, y: 161}
+  - name: Arm_R_Doblado_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1732
+      y: 4
+      width: 287
+      height: 423
+    spriteID: 0b9097b1f2fbbab40a0a2a468cae285e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1732, y: 4}
+    spritePosition: {x: 207, y: 189}
+  - name: Arm__R_Estirado
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1450
+      y: 4
+      width: 274
+      height: 712
+    spriteID: 50016f37afa3743428e4077c42b79438
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1450, y: 4}
+    spritePosition: {x: 492, y: 1238}
+  - name: Leg_R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 4
+      width: 372
+      height: 986
+    spriteID: 2764b4fda59560e4c8858cf030874264
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 384, y: 4}
+    spritePosition: {x: 1156, y: 72}
+  - name: Leg_L
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 372
+      height: 989
+    spriteID: 3aaef3af7318d094da0ad46c35d56c2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 1584, y: 72}
+  - name: Hip_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 1001
+      width: 292
+      height: 289
+    spriteID: 65b6e0ddd85d79f49a07ddbe67176de9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 670, y: 1001}
+    spritePosition: {x: 1624, y: 1130}
+  - name: Hand_R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1668
+      width: 275
+      height: 341
+    spriteID: e6d57bf1b8a15094d9a2addc2b632dfb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1668}
+    spritePosition: {x: 875, y: 1178}
+  - name: Hand_L
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1320
+      width: 280
+      height: 340
+    spriteID: 6468e1e4c54396142b9a1159de7e514d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1320}
+    spritePosition: {x: 841, y: 1600}
+  - name: Arm__L_Estirado
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1168
+      y: 4
+      width: 274
+      height: 719
+    spriteID: cc60020d42dcc5547a5da3c0bb1ef60a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1168, y: 4}
+    spritePosition: {x: 148, y: 1238}
+  - name: Foream__L_Doblado_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 337
+      y: 1001
+      width: 325
+      height: 311
+    spriteID: 8a7b150c2c169944cb7ef912a2c7be56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 337, y: 1001}
+    spritePosition: {x: 713, y: 713}
+  - name: Elbow__R_Doblado_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1168
+      y: 731
+      width: 180
+      height: 140
+    spriteID: b1d57ed3fec879f44a5f416447889719
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1168, y: 731}
+    spritePosition: {x: 540, y: 86}
+  - name: Elbow__L_Doblado_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1450
+      y: 724
+      width: 170
+      height: 146
+    spriteID: 6c41bdd590c01e9428a11b940dc05efd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1450, y: 724}
+    spritePosition: {x: 627, y: 494}
+  - name: Cap_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 970
+      y: 1001
+      width: 373
+      height: 206
+    spriteID: 20e313931883ce24c9fefdc243743954
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 970, y: 1001}
+    spritePosition: {x: 1624, y: 1519}
+  - name: Body_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 764
+      y: 4
+      width: 396
+      height: 873
+    spriteID: 00099f220627f87468c11fba5f3bad2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 764, y: 4}
+    spritePosition: {x: 1194, y: 1074}
+  - name: Arm_L_Doblado_
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1732
+      y: 435
+      width: 230
+      height: 447
+    spriteID: 4876ee4bddd579043bc14d06ecee4836
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1732, y: 435}
+    spritePosition: {x: 352, y: 645}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  generateTileAssets: 0
+  tilePaletteCellLayout: 0
+  tilePaletteHexagonLayout: 0
+  tilePaletteCellSize: {x: 1, y: 1, z: 0}
+  tilePaletteCellSizing: 0
+  transparencySortMode: 0
+  transparencySortAxis: {x: 0, y: 0, z: 1}
+  tileTemplate: {instanceID: 0}
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: Atlas_Mati
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d8d01b6ce3aab1a408b2f7677a1bbed4
+    layerID: 132
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Foream__R_Doblado_
+    spriteName: Foream__R_Doblado_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b320f9e2d56a2bc47a352d131af29b84
+    layerID: 131
+    mosaicPosition: {x: 4, y: 1001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Elbow__R_Estirado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c00d6765f25b1fc418c7323b5fe67080
+    layerID: 130
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Arm_R_Doblado_
+    spriteName: Arm_R_Doblado_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0b9097b1f2fbbab40a0a2a468cae285e
+    layerID: 129
+    mosaicPosition: {x: 1732, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arm__R_Estirado
+    spriteName: Arm__R_Estirado
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 50016f37afa3743428e4077c42b79438
+    layerID: 128
+    mosaicPosition: {x: 1450, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Leg_R
+    spriteName: Leg_R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 2764b4fda59560e4c8858cf030874264
+    layerID: 127
+    mosaicPosition: {x: 384, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Leg_L
+    spriteName: Leg_L
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3aaef3af7318d094da0ad46c35d56c2a
+    layerID: 126
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hip_
+    spriteName: Hip_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 65b6e0ddd85d79f49a07ddbe67176de9
+    layerID: 125
+    mosaicPosition: {x: 670, y: 1001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hand_R
+    spriteName: Hand_R
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e6d57bf1b8a15094d9a2addc2b632dfb
+    layerID: 124
+    mosaicPosition: {x: 4, y: 1668}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hand_L
+    spriteName: Hand_L
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 6468e1e4c54396142b9a1159de7e514d
+    layerID: 123
+    mosaicPosition: {x: 4, y: 1320}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arm__L_Estirado
+    spriteName: Arm__L_Estirado
+    isGroup: 0
+    parentIndex: 0
+    spriteID: cc60020d42dcc5547a5da3c0bb1ef60a
+    layerID: 113
+    mosaicPosition: {x: 1168, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Foream__L_Doblado_
+    spriteName: Foream__L_Doblado_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8a7b150c2c169944cb7ef912a2c7be56
+    layerID: 120
+    mosaicPosition: {x: 337, y: 1001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Elbow__R_Doblado_
+    spriteName: Elbow__R_Doblado_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: b1d57ed3fec879f44a5f416447889719
+    layerID: 119
+    mosaicPosition: {x: 1168, y: 731}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Elbow__L_Estirado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 0
+    spriteID: db706be0db0c15e4eb53a552fd4c830f
+    layerID: 118
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Elbow__L_Doblado_
+    spriteName: Elbow__L_Doblado_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 6c41bdd590c01e9428a11b940dc05efd
+    layerID: 117
+    mosaicPosition: {x: 1450, y: 724}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cap_
+    spriteName: Cap_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 20e313931883ce24c9fefdc243743954
+    layerID: 116
+    mosaicPosition: {x: 970, y: 1001}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Body_
+    spriteName: Body_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 00099f220627f87468c11fba5f3bad2b
+    layerID: 115
+    mosaicPosition: {x: 764, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arm_L_Doblado_
+    spriteName: Arm_L_Doblado_
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4876ee4bddd579043bc14d06ecee4836
+    layerID: 114
+    mosaicPosition: {x: 1732, y: 435}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Atlas_Dao_Hoody
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 4d194468a3792184b907bba5d2dd6521
+    layerID: 109
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Cuerda_
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 964f642f5431d5b4cadfdcd61316a186
+    layerID: 111
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Body_Cap
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 05a85a6583973f243a98e3e3c7cdca27
+    layerID: 110
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: f24028d25b3ff124095dd4e9b464b3a8
+    layerID: 108
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: e700336a9a2e0a041a495f8b9b62a94b
+    layerID: 107
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hip
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 50f9de266ba7c8546807ea3942ab753a
+    layerID: 106
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: HandR
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: de8b92fa9a9997e4ebf19aafe58b4f01
+    layerID: 105
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_L_Doblado_
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: ff56e2f2278e7354285c56d2b1437e5f
+    layerID: 104
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: HandL
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 6bec690a4bc3f3741ba964d84e09067e
+    layerID: 103
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 0b59f4b98367b6f46b4f23921b7c29da
+    layerID: 101
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 188897357ace7f54f8549242987930a9
+    layerID: 100
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Foream__L_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 5057cbdb1e86cbb4b9c087375e73b84c
+    layerID: 99
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Elbow_L_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 09bbc591135a90d40921efaa1a7d5a62
+    layerID: 98
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Elbow_R_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 24a1c6b9410b6524ab82e793cfe919f9
+    layerID: 97
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Foream___R_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: ee7568352c4c8df4ab00235c2e3e93a9
+    layerID: 96
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm__R_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 18
+    spriteID: 479c7a684e70b084ab0f82a7a1d4aef1
+    layerID: 95
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Atlas_Dao
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 9f038f532cc175140ad4c160ccad073d
+    layerID: 92
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Leg_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: c2c931be824828845a35c7dd80844eea
+    layerID: 90
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: ed8e7511c81329247b69376e3a6dc414
+    layerID: 89
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hip
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: f6b82fd83d2084d4cb7cc07c87d07fc5
+    layerID: 88
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: HandR
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 5adb39090158a484cbf9ea2d9799cb69
+    layerID: 87
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_L_Doblado_
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: f1b912caf92e34347b633bee3a2de6b6
+    layerID: 91
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: HandL
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 676a5b436549d954ba008287e3b8f3af
+    layerID: 86
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Body
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: a7fe4dee9297b2c47a4187a7e005d0c6
+    layerID: 85
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 83a1da9690c821849b2cfcb711b199a8
+    layerID: 84
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 9b5c46395e5015c46901350a89b9d28a
+    layerID: 83
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Foream__L_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 94695fd7afd13594cbf4ed4bc878e235
+    layerID: 82
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Elbow_L_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: cf55939afb17409418220780fce7bac1
+    layerID: 81
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Elbow_R_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: e29e2c59f081b4548bff738356ca2775
+    layerID: 80
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Foream___R_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: db8b2c3b7151f4e4ebfe47e02b13e70f
+    layerID: 79
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm__R_doblado
+    spriteName: 
+    isGroup: 0
+    parentIndex: 34
+    spriteID: cb23d1fb006603a43a68145ed8f765c2
+    layerID: 78
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Atlas Junto
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: cfe76afb6d9308044ac37206101cfc99
+    layerID: 76
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Necklace
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 710a5f1ad3db4c44bbf2a11a33083397
+    layerID: 75
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Ponytail
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 77dcf39975fbbc74aa56674bf1ed9b53
+    layerID: 74
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Fringe
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 1928fdd811f0c284bba72dc4f9fab511
+    layerID: 73
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hair
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 758db157c9a69f6409c2d085e4bee532
+    layerID: 72
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 2d5b14aabf3a5fc438a14435c843fb7c
+    layerID: 71
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hood
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 392e9e26783d47f42b5db1b556893869
+    layerID: 70
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Head
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 08542249514fea844afc2ee1b6226b38
+    layerID: 69
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Body
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 43ef5ddf7fd8f684d8a15a372f4c54e3
+    layerID: 68
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Necklace_behind
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 31b4730cb775d854db4306d3db349f45
+    layerID: 67
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: 83cb300bddad8f64685f3ce9fc4a15a1
+    layerID: 66
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hip
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: afbbda0671a00fd4abe7412b37688530
+    layerID: 65
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: be12e5b690a8ed345bcf9367346f6a86
+    layerID: 64
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 49
+    spriteID: cd7c4fb2399950742932107ee6933a16
+    layerID: 63
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Atlas Separado
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 2de64fc803668e843a432f2f51a3be1a
+    layerID: 60
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Necklace
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: e52e360a296546a4781943c3c51d620f
+    layerID: 28
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Ponytail
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: d1559dd61607dbc4e8a87f976f8a35d1
+    layerID: 55
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Fringe
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: fc1a278bd1730f449a41596df24bfe0a
+    layerID: 54
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hair
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 2db2a9529c53ba144a09e2f503cae7b3
+    layerID: 53
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 6510f57ddcfb80645821506cd963d435
+    layerID: 47
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hood
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 147a1177ce1a80e4e98193400fd08b2f
+    layerID: 51
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Head
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: e201b9ddd6ea3cb4caf6ff5ac5c14a45
+    layerID: 52
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Body
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: f0f510e2b4b2478459308f3efe10e3ce
+    layerID: 46
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Necklace_behind
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 2790d13e6be947046aa2cd970a863afa
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_R
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 5bc69566229457f469bc88aa4ce59097
+    layerID: 43
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Hip
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 15fdf57e8ef7bdc40aa4b87882df3c66
+    layerID: 9
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Leg_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: e6dd4e1ae2222a940abd072a45c61cd7
+    layerID: 44
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_L
+    spriteName: 
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 825928d7a355f0b4bb974b8a0cc41f99
+    layerID: 49
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
