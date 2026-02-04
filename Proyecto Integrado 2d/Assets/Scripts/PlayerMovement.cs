@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
     
     private bool isAttacking = false;
     private bool isBlocking = false;
-    public bool ispunching = false;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,13 +46,30 @@ public class PlayerMovement : MonoBehaviour
 
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         
-        if (inputHorizontal != 0) animator.SetBool("IsWalking", true);
-        else animator.SetBool("IsWalking", false);
+        if (inputHorizontal > 0) 
+        {
+            // Moviendo a la DERECHA (Adelante)
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsBackWalking", false);
+        }
+        else if (inputHorizontal < 0)
+        {
+            // Moviendo a la IZQUIERDA (Atrás)
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsBackWalking", true);
+        }
+        else
+        {
+            // QUIETO
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsBackWalking", false);
+        }
     }
-
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(inputHorizontal * velocity, rb.linearVelocity.y);
+        
+            rb.linearVelocity = new Vector2(inputHorizontal * velocity, rb.linearVelocity.y);
+        
     }
 
     void StartAttack()
@@ -82,10 +97,21 @@ public class PlayerMovement : MonoBehaviour
     
     public void DetectarGolpe()
     {
-        Collider2D[] objectsPunch = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
-        foreach (Collider2D enemigo in objectsPunch)
+        // Detectamos todo lo que esté en el círculo de ataque y sea capa "Enemigos"
+        Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
+
+        foreach (Collider2D enemigo in objetosGolpeados)
         {
-            ispunching = true;
+            // 1. Buscamos si el objeto golpeado tiene el script "SacoBoxeo"
+            SacoBoxeo saco = enemigo.GetComponent<SacoBoxeo>();
+
+            // 2. Si lo tiene, activamos su función Golpeado
+            if (saco != null)
+            {
+                saco.Golpeado();
+            }
+            
+            // Aquí añadiremos lógica para enemigos reales (con vida) más adelante
             Debug.Log("¡Golpeaste a " + enemigo.name + "!");
         }
     }

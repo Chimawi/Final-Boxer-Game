@@ -1,23 +1,23 @@
 using UnityEngine;
 
-public class OtroScript : MonoBehaviour
-{Animator animator;
-    public PlayerMovement playerMovement;
+public class SacoBoxeo : MonoBehaviour
+{
+    private Animator anim;
 
-    private void Start()
+    void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
-    void Update()
+
+    // Esta función la llamará el Player cuando su puño toque el saco
+    public void Golpeado()
     {
-        if (playerMovement.ispunching = true) {
-            animator.SetTrigger("IsHitingBox");
-}
-
-
+        anim.SetTrigger("Hit");
+        
+        // Opcional: Sonido de golpe aquí más adelante
+        Debug.Log("¡El saco ha sido golpeado!");
     }
 }
-
 
 
 
