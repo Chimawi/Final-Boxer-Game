@@ -472,7 +472,7 @@ Transform:
   m_GameObject: {fileID: 438102994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2122374, y: 0.14300036, z: -10}
+  m_LocalPosition: {x: -3.1387396, y: 0.14300036, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -661,7 +661,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.213327, y: 0.083349995, z: -10}
+  m_LocalPosition: {x: -3.140036, y: 0.08304, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3579,6 +3579,7 @@ MonoBehaviour:
   enemysLayer:
     serializedVersion: 2
     m_Bits: 64
+  ispunching: 0
 --- !u!70 &2119835268
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
