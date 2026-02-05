@@ -1,99 +1,150 @@
 using UnityEngine;
+using System.Collections; // Necesario para usar IEnumerator
 
 public class EnemyAI : MonoBehaviour
 {
-    [Header("Configuración Movimiento")]
-    public float velocidad = 3f;
-    
-    [Header("Configuración IA")]
-    public Transform playerTarget;
-    public Transform centroCuerpo;
-    public float distanciaAtaque = 2.0f;    // Aumentado para probar
-    public float distanciaRetirada = 1.0f; 
+    [Header("Configuración de Movimiento")]
+    public float velocidad = 3.0f;
+    public float intervaloCambio = 2.0f;
 
-    private Rigidbody2D rb;
+    [Header("Configuración de Combate")]
+    public float tiempoDeReaccion = 1.0f; // Tiempo que tarda en atacar tras detectar (1 segundo)
+    public float duracionAnimacionCombate = 1.5f; // Tiempo para que termine la animacion de ataque
+
+    [Header("Referencias")]
     private Animator animator;
-    private SpriteRenderer spriteRenderer; // Para cambiar color
-    private float moveDirection; 
+    private float tiempoTranscurrido;
+    private int direccionMovimiento = 1;
+    private bool estaEnCombate = false;
+
+    [Header("Punch")]
+    public Transform attackPoint;
+    public float radiusPunch = 0.5f;
+    public LayerMask enemysLayer;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Forzamos la búsqueda
-        if (playerTarget == null)
-        {
-            var jugador = GameObject.FindGameObjectWithTag("Player");
-            if (jugador != null) playerTarget = jugador.transform;
-        }
+        ElegirNuevaDireccion();
     }
 
     void Update()
     {
-        // 1. CHEQUEO DE SEGURIDAD
-        if (playerTarget == null) 
-        {
-            Debug.LogError("❌ EL ENEMIGO NO ENCUENTRA AL JUGADOR (Revisar TAG 'Player')");
-            return;
-        }
+        // Si está en combate (esperando o atacando), no se mueve
+        if (estaEnCombate) return;
 
-        // 2. CALCULAR DISTANCIA
-        float miX = (centroCuerpo != null) ? centroCuerpo.position.x : transform.position.x;
-        float distanciaX = Mathf.Abs(miX - playerTarget.position.x);
+        MoverEnemigo();
+        GestionarTiempo();
+    }
 
-        // 3. LÓGICA CON COLORES (DEBUG)
-        if (distanciaX > distanciaAtaque)
-        {
-            // LEJOS -> ACERCARSE (VERDE)
-            moveDirection = (miX > playerTarget.position.x) ? -1f : 1f;
-            spriteRenderer.color = Color.green; 
-        }
-        else if (distanciaX < distanciaRetirada)
-        {
-            // CERCA -> RETIRARSE (ROJO)
-            moveDirection = (miX > playerTarget.position.x) ? 1f : -1f;
-            spriteRenderer.color = Color.red;
-        }
-        else
-        {
-            // ZONA NEUTRA -> QUIETO (AMARILLO)
-            moveDirection = 0f;
-            spriteRenderer.color = Color.yellow;
-        }
+    void MoverEnemigo()
+    {
+        transform.Translate(Vector3.right * direccionMovimiento * velocidad * Time.deltaTime);
+    }
 
-        // 4. ANIMACIONES (Simplificado)
-        if (moveDirection != 0)
+    void GestionarTiempo()
+    {
+        tiempoTranscurrido += Time.deltaTime;
+
+        if (tiempoTranscurrido >= intervaloCambio)
         {
-             // Si se mueve, activamos caminar
-             animator.SetBool("IsWalking", true);
-             // Para simplificar test, desactivamos backwalk por ahora
-             animator.SetBool("IsBackWalking", false);
-        }
-        else
-        {
-             animator.SetBool("IsWalking", false);
+            ElegirNuevaDireccion();
+            tiempoTranscurrido = 0;
         }
     }
 
-    void FixedUpdate()
+    void ElegirNuevaDireccion()
     {
-        // MOVIMIENTO FÍSICO
-        if (rb != null)
+        int aleatorio = Random.Range(0, 2);
+        direccionMovimiento = (aleatorio == 0) ? -1 : 1;
+        ActualizarAnimacionesMovimiento();
+    }
+
+    void ActualizarAnimacionesMovimiento()
+    {
+        if (direccionMovimiento == 1)
         {
-            rb.linearVelocity = new Vector2(moveDirection * velocidad, rb.linearVelocity.y);
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsBackWalking", false);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsBackWalking", true);
         }
     }
-    
-    void OnDrawGizmos()
+
+    void DetenerAnimacionesMovimiento()
     {
-        if (centroCuerpo != null)
+        // Congelamos visualmente al enemigo
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsBackWalking", false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Solo iniciamos la corrutina si es el Player y NO estamos ya en combate
+        if (other.CompareTag("Player") && !estaEnCombate)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(centroCuerpo.position, distanciaAtaque);
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(centroCuerpo.position, distanciaRetirada);
+            StartCoroutine(SecuenciaDeCombate());
+        }
+    }
+
+    // --- AQUÍ ESTÁ LA NUEVA CURRUTINA ---
+    IEnumerator SecuenciaDeCombate()
+    {
+        estaEnCombate = true; // 1. Detenemos la lógica del Update inmediatamente
+        DetenerAnimacionesMovimiento(); // 2. El enemigo se queda quieto (Idle)
+
+        // 3. Esperamos el tiempo de reacción (1 segundo)
+        // Durante este tiempo el enemigo está en Idle mirando al jugador
+        yield return new WaitForSeconds(tiempoDeReaccion);
+
+        // 4. Decidimos qué hacer (Atacar o Bloquear)
+        float decision = Random.Range(0f, 1f);
+        if (decision > 0.5f)
+        {
+            Debug.Log("IA: ¡Atacando!");
+            animator.SetTrigger("Attack");
+        }
+        else
+        {
+            Debug.Log("IA: ¡Bloqueando!");
+            animator.SetTrigger("Block");
+        }
+
+        // 5. Esperamos a que termine la animación del ataque/bloqueo
+        // Si tus animaciones duran más o menos, ajusta 'duracionAnimacionCombate'
+        yield return new WaitForSeconds(duracionAnimacionCombate);
+
+        // 6. Volvemos a patrullar
+        ReiniciarPatrulla();
+    }
+
+    void ReiniciarPatrulla()
+    {
+        estaEnCombate = false;
+        ElegirNuevaDireccion();
+    }
+
+    public void DetectarGolpe()
+    {
+        // Detectamos todo lo que esté en el círculo de ataque y sea capa "Enemigos"
+        Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
+
+        foreach (Collider2D enemigo in objetosGolpeados)
+        {
+            // 1. Buscamos si el objeto golpeado tiene el script "SacoBoxeo"
+            SacoBoxeo saco = enemigo.GetComponent<SacoBoxeo>();
+
+            // 2. Si lo tiene, activamos su función Golpeado
+            if (saco != null)
+            {
+                saco.Golpeado();
+            }
+
+            // Aquí añadiremos lógica para enemigos reales (con vida) más adelante
+            Debug.Log("¡Golpeaste a " + enemigo.name + "!");
         }
     }
 }
