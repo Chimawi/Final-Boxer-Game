@@ -678,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &69678586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,16 +1105,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160001411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 7.2727275, y: 7.2727275, z: 7.2727275}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1211701870}
+  m_Father: {fileID: 877857306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 9}
+  m_AnchoredPosition: {x: 10.909089, y: 8.181806}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &160001413
@@ -1180,16 +1180,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165926020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2.7272727, y: 2.7272727, z: 2.7272727}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1211701870}
+  m_Father: {fileID: 877857306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192, y: 99.799}
+  m_AnchoredPosition: {x: 174.54547, y: 90.72638}
   m_SizeDelta: {x: 122.277, y: 81.5976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165926022
@@ -3964,7 +3964,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 160001412}
+  - {fileID: 165926021}
+  - {fileID: 1114547600}
+  - {fileID: 1802158523}
   m_Father: {fileID: 1211701870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4293,16 +4297,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114547599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.90909094, y: 0.90909094, z: 0.90909094}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1211701870}
+  m_Father: {fileID: 877857306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145.7, y: -92}
+  m_AnchoredPosition: {x: 132.4545, y: -83.63636}
   m_SizeDelta: {x: 122.277, y: 81.5976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114547601
@@ -4349,9 +4353,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1211701866}
-        m_TargetAssemblyTypeName: LoseAndWinManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+      - m_Target: {fileID: 1211701871}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: VolverAlMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4381,7 +4385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EXIT
+  m_text: MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89e5dc78ad911654499ad9d789dd7f0e, type: 2}
   m_sharedMaterial: {fileID: 3040526310139127466, guid: 89e5dc78ad911654499ad9d789dd7f0e, type: 2}
@@ -4775,13 +4779,14 @@ GameObject:
   - component: {fileID: 1211701868}
   - component: {fileID: 1211701867}
   - component: {fileID: 1211701866}
+  - component: {fileID: 1211701871}
   m_Layer: 5
-  m_Name: Canvas Lose
+  m_Name: CanvasGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1211701866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4870,10 +4875,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 877857306}
-  - {fileID: 160001412}
-  - {fileID: 165926021}
-  - {fileID: 1114547600}
-  - {fileID: 1802158523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4881,6 +4882,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1211701871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211701865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3af981add026af42970fbfa27cc0958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOver
+  gameOverPanel: {fileID: 877857305}
 --- !u!4 &1278351404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5640183970409471769, guid: 1e06c040b149ddb47ae7b87a8e035c1a, type: 3}
@@ -6081,16 +6095,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802158522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.90909094, y: 0.90909094, z: 0.90909094}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1211701870}
+  m_Father: {fileID: 877857306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148, y: -32}
+  m_AnchoredPosition: {x: 134.54544, y: -29.0909}
   m_SizeDelta: {x: 122.277, y: 81.5976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802158524
@@ -6137,9 +6151,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1211701866}
-        m_TargetAssemblyTypeName: LoseAndWinManager, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 1211701871}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: ReiniciarNivel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
