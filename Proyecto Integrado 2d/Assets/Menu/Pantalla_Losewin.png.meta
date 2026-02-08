@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: 5b8d21bcf59dc394ea93164201caba5c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -308689455444359688
+    second: Pantalla_Losewin_0
+  - first:
+      213: -1006463759400282238
+    second: Pantalla_Losewin_1
+  - first:
+      213: -841272911452508697
+    second: Pantalla_Losewin_2
+  - first:
+      213: 6374769625681243638
+    second: Pantalla_Losewin_3
+  - first:
+      213: -9030990745349290313
+    second: Pantalla_Losewin_4
+  - first:
+      213: 4326809663278858781
+    second: Pantalla_Losewin_5
+  - first:
+      213: -119587743975448255
+    second: Pantalla_Losewin_6
+  - first:
+      213: -6476713574134868753
+    second: Pantalla_Losewin_7
+  - first:
+      213: 6604011840001647431
+    second: Pantalla_Losewin_8
+  - first:
+      213: 1558797126794224874
+    second: Pantalla_Losewin_9
+  - first:
+      213: -1610910736467223678
+    second: Pantalla_Losewin_10
+  - first:
+      213: 5543714746087938710
+    second: Pantalla_Losewin_11
+  - first:
+      213: 6305416369361777778
+    second: Pantalla_Losewin_12
+  - first:
+      213: 5774595809933902696
+    second: Pantalla_Losewin_13
+  - first:
+      213: 4471467939231412821
+    second: Pantalla_Losewin_14
+  - first:
+      213: -6753556585474587036
+    second: Pantalla_Losewin_15
+  - first:
+      213: -7679935237099972505
+    second: Pantalla_Losewin_16
+  - first:
+      213: 1693009407675833152
+    second: Pantalla_Losewin_17
+  - first:
+      213: -8007299990810869415
+    second: Pantalla_Losewin_18
+  - first:
+      213: 6319022170416718839
+    second: Pantalla_Losewin_19
+  - first:
+      213: -3940557088128349583
+    second: Pantalla_Losewin_20
+  - first:
+      213: -3682895091596003550
+    second: Pantalla_Losewin_21
+  - first:
+      213: 5750826364514136589
+    second: Pantalla_Losewin_22
+  - first:
+      213: 2015899676390362222
+    second: Pantalla_Losewin_23
+  - first:
+      213: 1260068614823921394
+    second: Pantalla_Losewin_24
+  - first:
+      213: 3427967728275201911
+    second: Pantalla_Losewin_25
+  - first:
+      213: 2428391529992640729
+    second: Pantalla_Losewin_26
+  - first:
+      213: 5896237593673423006
+    second: Pantalla_Losewin_27
+  - first:
+      213: -1371638901958234664
+    second: Pantalla_Losewin_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pantalla_Losewin_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1013
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f58456639057bbf0800000000000000
+      internalID: -308689455444359688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_1
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1033
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28754a51b825802f0800000000000000
+      internalID: -1006463759400282238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1006
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ede6b98eb23354f0800000000000000
+      internalID: -841272911452508697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_3
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1013
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd2ea7133bb77850800000000000000
+      internalID: 6374769625681243638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_4
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 1012
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b68d9de3c97ba280800000000000000
+      internalID: -9030990745349290313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_5
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 996
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12c67ed67aeb0c30800000000000000
+      internalID: 4326809663278858781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_6
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1011
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1416ad89493275ef0800000000000000
+      internalID: -119587743975448255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_7
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 972
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe49db5c1571e16a0800000000000000
+      internalID: -6476713574134868753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_8
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 841
+        height: 999
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743a5c767c926ab50800000000000000
+      internalID: 6604011840001647431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_9
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 976
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4287b5ab5f1a510800000000000000
+      internalID: 1558797126794224874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_10
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 984
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b120c5835e4a9e0800000000000000
+      internalID: -1610910736467223678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_11
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 957
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a9aa0903b3fec40800000000000000
+      internalID: 5543714746087938710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_12
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 865
+        width: 45
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274fdb8c7c6518750800000000000000
+      internalID: 6305416369361777778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 809
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863c1944b4c732050800000000000000
+      internalID: 5774595809933902696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_14
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 807
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552bf6e5668dd0e30800000000000000
+      internalID: 4471467939231412821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_15
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 675
+        width: 31
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4668940411c8642a0800000000000000
+      internalID: -6753556585474587036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_16
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 671
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76896a687936b6590800000000000000
+      internalID: -7679935237099972505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_17
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 620
+        width: 151
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b99e91617ce7710800000000000000
+      internalID: 1693009407675833152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_18
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 655
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 951cab5351b50e090800000000000000
+      internalID: -8007299990810869415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_19
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 658
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3a1833f2da1b750800000000000000
+      internalID: 6319022170416718839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_20
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 642
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a46f0d4345059c0800000000000000
+      internalID: -3940557088128349583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_21
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 254
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 227f3605d6ab3ecc0800000000000000
+      internalID: -3682895091596003550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_22
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 142
+        width: 318
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02f0ddfb1a0fcf40800000000000000
+      internalID: 5750826364514136589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_23
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 474
+        width: 43
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c8212331ae9fb10800000000000000
+      internalID: 2015899676390362222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 107
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6c233aab9ac7110800000000000000
+      internalID: 1260068614823921394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 124
+        width: 95
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f98599c76929f20800000000000000
+      internalID: 3427967728275201911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_26
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 0
+        width: 224
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d857c8fa3163b120800000000000000
+      internalID: 2428391529992640729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_27
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 135
+        width: 77
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9855321ad4a3d150800000000000000
+      internalID: 5896237593673423006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin_28
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 62
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd2ca89fa5f6fce0800000000000000
+      internalID: -1371638901958234664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pantalla_Losewin_0: -308689455444359688
+      Pantalla_Losewin_1: -1006463759400282238
+      Pantalla_Losewin_10: -1610910736467223678
+      Pantalla_Losewin_11: 5543714746087938710
+      Pantalla_Losewin_12: 6305416369361777778
+      Pantalla_Losewin_13: 5774595809933902696
+      Pantalla_Losewin_14: 4471467939231412821
+      Pantalla_Losewin_15: -6753556585474587036
+      Pantalla_Losewin_16: -7679935237099972505
+      Pantalla_Losewin_17: 1693009407675833152
+      Pantalla_Losewin_18: -8007299990810869415
+      Pantalla_Losewin_19: 6319022170416718839
+      Pantalla_Losewin_2: -841272911452508697
+      Pantalla_Losewin_20: -3940557088128349583
+      Pantalla_Losewin_21: -3682895091596003550
+      Pantalla_Losewin_22: 5750826364514136589
+      Pantalla_Losewin_23: 2015899676390362222
+      Pantalla_Losewin_24: 1260068614823921394
+      Pantalla_Losewin_25: 3427967728275201911
+      Pantalla_Losewin_26: 2428391529992640729
+      Pantalla_Losewin_27: 5896237593673423006
+      Pantalla_Losewin_28: -1371638901958234664
+      Pantalla_Losewin_3: 6374769625681243638
+      Pantalla_Losewin_4: -9030990745349290313
+      Pantalla_Losewin_5: 4326809663278858781
+      Pantalla_Losewin_6: -119587743975448255
+      Pantalla_Losewin_7: -6476713574134868753
+      Pantalla_Losewin_8: 6604011840001647431
+      Pantalla_Losewin_9: 1558797126794224874
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

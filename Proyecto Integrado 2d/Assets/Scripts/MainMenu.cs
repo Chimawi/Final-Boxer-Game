@@ -27,6 +27,6 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Garage Scene");
+        SceneManager.LoadScene("GarageScene");
     }
 }

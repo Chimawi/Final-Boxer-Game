@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: d9204a4bf72c69f4a8b3860e8a39384c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4418174447694003738
+    second: Pantalla_Losewin (1)_0
+  - first:
+      213: -6709208327217108178
+    second: Pantalla_Losewin (1)_1
+  - first:
+      213: -8035849946936234808
+    second: Pantalla_Losewin (1)_2
+  - first:
+      213: -6777422872080050434
+    second: Pantalla_Losewin (1)_3
+  - first:
+      213: -6081166587669978078
+    second: Pantalla_Losewin (1)_4
+  - first:
+      213: 1784754422245065362
+    second: Pantalla_Losewin (1)_5
+  - first:
+      213: -9200193060423459045
+    second: Pantalla_Losewin (1)_6
+  - first:
+      213: 6730986397975186358
+    second: Pantalla_Losewin (1)_7
+  - first:
+      213: 3667757190816181422
+    second: Pantalla_Losewin (1)_8
+  - first:
+      213: 8358326536447031975
+    second: Pantalla_Losewin (1)_9
+  - first:
+      213: 188999606386266728
+    second: Pantalla_Losewin (1)_10
+  - first:
+      213: -1313053124103534252
+    second: Pantalla_Losewin (1)_11
+  - first:
+      213: -1495253224895828864
+    second: Pantalla_Losewin (1)_12
+  - first:
+      213: 1497351623403358917
+    second: Pantalla_Losewin (1)_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_0
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 841
+        height: 999
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e328e6042805d30800000000000000
+      internalID: 4418174447694003738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_1
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 976
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ba124c29a14e2a0800000000000000
+      internalID: -6709208327217108178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_2
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 984
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc268c8c0dea7090800000000000000
+      internalID: -8035849946936234808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 675
+        width: 31
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef69f016ec1c1f1a0800000000000000
+      internalID: -6777422872080050434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 671
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224e4f9353b5b9ba0800000000000000
+      internalID: -6081166587669978078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 620
+        width: 151
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2928935e0b8b4c810800000000000000
+      internalID: 1784754422245065362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 655
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f12700829525080800000000000000
+      internalID: -9200193060423459045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 658
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb0c477774496d50800000000000000
+      internalID: 6730986397975186358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 254
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacabf08bbd76e230800000000000000
+      internalID: 3667757190816181422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_9
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 142
+        width: 318
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa75a953bdbef370800000000000000
+      internalID: 8358326536447031975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 124
+        width: 95
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862975104267f9200800000000000000
+      internalID: 188999606386266728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_11
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 135
+        width: 77
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4598796f32917cde0800000000000000
+      internalID: -1313053124103534252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 62
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ca3d83d1bcf3be0800000000000000
+      internalID: -1495253224895828864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pantalla_Losewin (1)_13
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 0
+        width: 224
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cacfc04e59a7c410800000000000000
+      internalID: 1497351623403358917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pantalla_Losewin (1)_0: 4418174447694003738
+      Pantalla_Losewin (1)_1: -6709208327217108178
+      Pantalla_Losewin (1)_10: 188999606386266728
+      Pantalla_Losewin (1)_11: -1313053124103534252
+      Pantalla_Losewin (1)_12: -1495253224895828864
+      Pantalla_Losewin (1)_13: 1497351623403358917
+      Pantalla_Losewin (1)_2: -8035849946936234808
+      Pantalla_Losewin (1)_3: -6777422872080050434
+      Pantalla_Losewin (1)_4: -6081166587669978078
+      Pantalla_Losewin (1)_5: 1784754422245065362
+      Pantalla_Losewin (1)_6: -9200193060423459045
+      Pantalla_Losewin (1)_7: 6730986397975186358
+      Pantalla_Losewin (1)_8: 3667757190816181422
+      Pantalla_Losewin (1)_9: 8358326536447031975
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
