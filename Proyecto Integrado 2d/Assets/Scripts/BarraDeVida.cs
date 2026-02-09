@@ -1,17 +1,22 @@
-using Unity.Hierarchy;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class BarraDeVida : MonoBehaviour
 {
-    
     public Image barraDeVida;
 
-    public float vidaActual;
+    // Quitamos Update para ahorrar rendimiento. 
+    // La barra solo cambiará cuando "alguien" se lo ordene.
 
-    public float vidaMaxima;
-
-    void Update()
+    public void InicializarBarra(float cantidadVida)
     {
+        // Al empezar, llenamos la barra al máximo
+        barraDeVida.fillAmount = 1f;
+    }
+
+    public void CambiarVidaActual(float vidaActual, float vidaMaxima)
+    {
+        // Calculamos el porcentaje (Ej: 80 / 100 = 0.8)
         barraDeVida.fillAmount = vidaActual / vidaMaxima;
     }
 }
