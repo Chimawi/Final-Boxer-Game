@@ -256,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
             if (enemigoScript != null)
             {
                 Vector2 direccionEmpuje = (enemigoScript.transform.position - transform.position).normalized;
-                enemigoScript.RecibirDaño(20f, direccionEmpuje, this);
+                enemigoScript.RecibirDaño(1f, direccionEmpuje, this);
             }
             SacoBoxeo sacoScript = colision.GetComponent<SacoBoxeo>();
             if (sacoScript != null) sacoScript.Golpeado();

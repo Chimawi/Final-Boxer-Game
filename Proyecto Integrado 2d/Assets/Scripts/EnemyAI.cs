@@ -94,9 +94,8 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // Al salir del diálogo, reseteamos el cooldown para que no te pegue instantáneamente
             tiempoSiguienteAccion = Time.time + 1.0f; 
-            ElegirNuevaDireccionAleatoria(); // Reactivar patrulla o combate
+            ElegirNuevaDireccionAleatoria(); 
         }
     }
     // -------------------------------------------------------------
@@ -368,7 +367,7 @@ public class EnemyAI : MonoBehaviour
             if (player != null)
             {
                 Vector2 direccionEmpuje = (player.transform.position - transform.position).normalized;
-                player.RecibirDaño(10f, direccionEmpuje, this); 
+                player.RecibirDaño(1f, direccionEmpuje, this); 
             }
         }
     }
