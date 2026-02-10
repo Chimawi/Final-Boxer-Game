@@ -10,13 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float fuerzaEmpuje = 5f;
     public float tiempoAturdimiento = 0.5f;
 
-    [Header("Cooldowns (Enfriamiento)")]
-    public float cooldownCombate = 3.0f; // Tiempo de espera entre acciones
+    [Header("Cooldowns")]
+    public float cooldownCombate = 3.0f; 
     private float tiempoSiguienteAtaque = 0f;
     private float tiempoSiguienteBloqueo = 0f;
 
-    [Header("UI - Barra de Vida")]
+    [Header("UI")]
     public BarraDeVida barraDeVidaScript; 
+    public GameObject pantallaDerrota; 
 
     [Header("Movimiento")]
     public float velocity = 5f;
@@ -37,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isBlocking = false; 
     private bool isHurt = false; 
     private bool isDead = false; 
+    private bool isVictory = false;
+    
+    // --- NUEVO: ESTADO DE DIÁLOGO ---
+    private bool isTalking = false; 
 
     void Start()
     {
@@ -46,11 +51,13 @@ public class PlayerMovement : MonoBehaviour
 
         vidaMaxima = vida;
         if (barraDeVidaScript != null) barraDeVidaScript.InicializarBarra(vida);
+        if (pantallaDerrota != null) pantallaDerrota.SetActive(false);
     }
 
     void Update()
     {
-        if (isDead || isHurt) return;
+        // --- NUEVO: AÑADIDO 'isTalking' AL BLOQUEO DE INPUTS ---
+        if (isDead || isHurt || isVictory || isTalking) return;
 
         if (isAttacking || isBlocking)
         {
@@ -62,37 +69,40 @@ public class PlayerMovement : MonoBehaviour
         GestionarMovimiento();
     }
 
-    // --- AQUÍ ESTÁ LA LÓGICA DEL COOLDOWN ---
+    // --- NUEVA FUNCIÓN PÚBLICA PARA EL NPC ---
+    public void SetEstadoDialogo(bool estado)
+    {
+        isTalking = estado;
+
+        if (isTalking)
+        {
+            // Si empezamos a hablar, frenamos en seco y reseteamos animaciones
+            rb.linearVelocity = Vector2.zero;
+            inputHorizontal = 0;
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsBackWalking", false);
+        }
+    }
+    // -----------------------------------------
+
     void GestionarInputsCombate()
     {
-        // BLOQUEO (V)
         if (Input.GetKeyDown(KeyCode.V)) 
         {
             if (Time.time >= tiempoSiguienteBloqueo)
             {
                 StartBlock();
-                // Marcamos el tiempo futuro en el que podremos volver a bloquear
                 tiempoSiguienteBloqueo = Time.time + cooldownCombate;
-                Debug.Log("Player: Bloqueo activado. Espera " + cooldownCombate + "s.");
-            }
-            else
-            {
-                Debug.Log("Player: ¡Bloqueo en enfriamiento!");
+                Debug.Log("Player: Bloqueo activado.");
             }
         }
-        // ATAQUE (C)
         else if (Input.GetKeyDown(KeyCode.C)) 
         {
             if (Time.time >= tiempoSiguienteAtaque)
             {
                 StartAttack();
-                // Marcamos el tiempo futuro en el que podremos volver a atacar
                 tiempoSiguienteAtaque = Time.time + cooldownCombate;
-                Debug.Log("Player: Ataque realizado. Espera " + cooldownCombate + "s.");
-            }
-            else
-            {
-                Debug.Log("Player: ¡Ataque en enfriamiento!");
+                Debug.Log("Player: Ataque lanzado.");
             }
         }
     }
@@ -107,21 +117,25 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isHurt && !isDead)
+        // --- NUEVO: AÑADIDO 'isTalking' ---
+        if (!isHurt && !isDead && !isVictory && !isTalking)
         {
             rb.linearVelocity = new Vector2(inputHorizontal * velocity, rb.linearVelocity.y);
         }
     }
 
-    // --- SISTEMA DE DAÑO Y BLOQUEO ---
+    // ... (EL RESTO DEL SCRIPT SIGUE IGUAL: RecibirDaño, Morir, DetectarGolpe, etc.)
+    
+    // Solo asegurate de que todo lo demás esté igual que en el script anterior
+    // por brevedad no copio las funciones de daño aquí, pero no las borres.
 
-    public void RecibirDaño(float daño, Vector2 direccionEmpuje, EnemyAI atacante = null)
+    // --- COPIA PEGA EL RESTO DE FUNCIONES (RecibirDaño, Morir, Rutinas, etc) AQUÍ ---
+     public void RecibirDaño(float daño, Vector2 direccionEmpuje, EnemyAI atacante = null)
     {
-        if (isDead) return;
+        if (isDead || isVictory) return; 
         
         if (isBlocking)
         {
-            Debug.Log("Player: ¡BLOQUEO PERFECTO!");
             if (atacante != null) atacante.RecibirAturdimientoPorBloqueo();
             StartCoroutine(EfectoBloqueo(direccionEmpuje));
             return; 
@@ -136,8 +150,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void RecibirAturdimientoPorBloqueo()
     {
-        if (isDead) return;
-        Debug.Log("Player: ¡Me bloquearon! Estoy aturdido.");
+        if (isDead || isVictory) return;
         StartCoroutine(RutinaStunAmarillo());
     }
 
@@ -146,14 +159,10 @@ public class PlayerMovement : MonoBehaviour
         isHurt = true; 
         isAttacking = false; 
         isBlocking = false;
-
         animator.SetTrigger("Hurt"); 
         rb.linearVelocity = Vector2.zero;
-        
         StartCoroutine(EfectoParpadeo(Color.yellow));
-
-        yield return new WaitForSeconds(tiempoAturdimiento + 1.0f); 
-
+        yield return new WaitForSeconds(tiempoAturdimiento + 0.5f); 
         isHurt = false;
         rb.linearVelocity = Vector2.zero;
     }
@@ -169,16 +178,13 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator RutinaEmpujeYMuerte(Vector2 direccion)
     {
         isHurt = true; 
-        isAttacking = false;
+        isAttacking = false; 
         isBlocking = false;
-
         animator.SetTrigger("Hurt"); 
         rb.linearVelocity = Vector2.zero;
         Vector2 empujeHorizontal = new Vector2(direccion.x, 0).normalized;
         rb.AddForce(empujeHorizontal * fuerzaEmpuje, ForceMode2D.Impulse);
-
         yield return new WaitForSeconds(tiempoAturdimiento);
-
         if (vida <= 0) Morir();
         else { isHurt = false; rb.linearVelocity = Vector2.zero; }
     }
@@ -204,10 +210,37 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static; 
         GetComponent<Collider2D>().enabled = false; 
+        EnemyAI[] listaEnemigos = FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
+        foreach (EnemyAI enemigo in listaEnemigos) if (enemigo != null) enemigo.ActivarVictoria();
+        StartCoroutine(RutinaDerrota());
+    }
+
+    IEnumerator RutinaDerrota()
+    {
+        yield return new WaitForSeconds(4.0f);
+        if (pantallaDerrota != null) pantallaDerrota.SetActive(true);
         this.enabled = false; 
     }
 
-    // --- ACCIONES ---
+    public void ActivarVictoria()
+    {
+        if (isVictory) return;
+        isVictory = true; 
+        isAttacking = false;
+        isBlocking = false;
+        inputHorizontal = 0;
+        rb.linearVelocity = Vector2.zero;
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsBackWalking", false);
+        StartCoroutine(RutinaVictoria());
+    }
+
+    IEnumerator RutinaVictoria()
+    {
+        yield return new WaitForSeconds(3.0f); 
+        animator.SetTrigger("Victory");
+    }
+
     void StartAttack() { isAttacking = true; animator.SetTrigger("Attack"); }
     public void FinishAttack() { isAttacking = false; }
     void StartBlock() { isBlocking = true; animator.SetTrigger("Block"); }
@@ -216,18 +249,17 @@ public class PlayerMovement : MonoBehaviour
     public void DetectarGolpe()
     {
         Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
-
         foreach (Collider2D colision in objetosGolpeados)
         {
-            if (colision is BoxCollider2D) continue; // Filtro de hitbox
-
+            if (colision is BoxCollider2D) continue; 
             EnemyAI enemigoScript = colision.GetComponent<EnemyAI>();
-
             if (enemigoScript != null)
             {
                 Vector2 direccionEmpuje = (enemigoScript.transform.position - transform.position).normalized;
-                enemigoScript.RecibirDaño(1.0f, direccionEmpuje, this);
+                enemigoScript.RecibirDaño(20f, direccionEmpuje, this);
             }
+            SacoBoxeo sacoScript = colision.GetComponent<SacoBoxeo>();
+            if (sacoScript != null) sacoScript.Golpeado();
         }
     }
 }

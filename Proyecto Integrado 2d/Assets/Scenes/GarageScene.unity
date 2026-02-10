@@ -491,7 +491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &196525228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1111,6 +1111,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &355488972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355488975}
+  - component: {fileID: 355488974}
+  - component: {fileID: 355488973}
+  m_Layer: 0
+  m_Name: Dialogo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &355488973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355488972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a1c8965aa04ac04408a33fb1d12e520c, type: 2}
+  m_sharedMaterial: {fileID: -6962400496231563408, guid: a1c8965aa04ac04408a33fb1d12e520c, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4283275466
+  m_fontColor: {r: 0.79215693, g: 0.59607846, b: 0.3019608, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 0
+  m_fontColorGradient:
+    topLeft: {r: 0.01886791, g: 0.002224989, b: 0.002224989, a: 1}
+    topRight: {r: 0.01886791, g: 0.002224989, b: 0.002224989, a: 1}
+    bottomLeft: {r: 0.01886791, g: 0.002224989, b: 0.002224989, a: 1}
+    bottomRight: {r: 0.01886791, g: 0.002224989, b: 0.002224989, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 34
+  m_fontSizeBase: 34
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -104.72628, y: 0, z: -481.13367, w: -118.77292}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &355488974
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355488972}
+  m_CullTransparentMesh: 1
+--- !u!224 &355488975
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355488972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.43571034, y: 0.43571034, z: 0.43571034}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621865586}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17.3, y: -27.7}
+  m_SizeDelta: {x: 119.8452, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &438102994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1882,7 @@ RectTransform:
   m_Children:
   - {fileID: 719158028}
   - {fileID: 1574299817}
+  - {fileID: 355488975}
   m_Father: {fileID: 1207973467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1911,6 +2048,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3967341481512919291, guid: 641a7b8d4b15e8c4c8798ad5774c1995, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1962937735}
+    - targetCorrespondingSourceObject: {fileID: 3967341481512919291, guid: 641a7b8d4b15e8c4c8798ad5774c1995, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1962937738}
   m_SourcePrefab: {fileID: 100100000, guid: 641a7b8d4b15e8c4c8798ad5774c1995, type: 3}
 --- !u!1 &670768333
 GameObject:
@@ -2068,8 +2208,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292471799
-  m_fontColor: {r: 0.9686275, g: 0.9215687, b: 0.85098046, a: 1}
+    rgba: 4283275466
+  m_fontColor: {r: 0.7924528, g: 0.5965824, b: 0.30277678, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2191,13 +2331,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e9e6fddbf9c314993305d53ddfc318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
+  vida: 100
+  fuerzaEmpuje: 5
+  tiempoAturdimiento: 0.5
+  rangoAtaque: 0.8
+  cooldownAcciones: 3
+  puntoDeVision: {fileID: 0}
+  barraDeVidaScript: {fileID: 0}
+  jugadorDetectado: 0
+  enDialogo: 0
   velocidad: 3
   intervaloCambio: 2
-  tiempoDeReaccion: 1
-  duracionAnimacionCombate: 1.5
   attackPoint: {fileID: 0}
   radiusPunch: 0.5
-  enemysLayer:
+  layerJugador:
     serializedVersion: 2
     m_Bits: 0
 --- !u!1 &886234585
@@ -2987,6 +3134,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7693587362091862450, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2074455081}
+    - targetCorrespondingSourceObject: {fileID: 7693587362091862450, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2074455083}
   m_SourcePrefab: {fileID: 100100000, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
 --- !u!4 &1331856100 stripped
 Transform:
@@ -3239,8 +3389,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292472055
-  m_fontColor: {r: 0.9686275, g: 0.92549026, b: 0.85098046, a: 1}
+    rgba: 4283275466
+  m_fontColor: {r: 0.79215693, g: 0.59607846, b: 0.3019608, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3924,6 +4074,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e106e908d15ff4dad6fe85e1d2b608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OtroScript
+--- !u!70 &1962937738
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962937730}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.69301194, y: -0.31295732}
+  m_Size: {x: 4.7474933, y: 14.200398}
+  m_Direction: 0
 --- !u!1 &2074455078 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7693587362091862450, guid: dff4c13852a782544b2ee560988ee7b6, type: 3}
@@ -3941,8 +4128,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228bc2d188796254eaf5d16bf8091d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
+  esIntroAutomatica: 0
   teclaEPrompt: {fileID: 987895642}
   panelDialogo: {fileID: 196525227}
+  textoDialogo: {fileID: 355488973}
+  lineasDelDialogo:
+  - Look who finally decided to wake up! Were you expecting me to bring you breakfast
+    in bed or what?
+  - 'We''ve reached the semifinals of this tournament; it''s no time to slack off
+
+'
+  - WHAT?? DO WE HAVE TO GO OVER THE BASICS AGAIN???
+  - I guess it never hurts to review the basics, after all
+  - Use C to use your powerful right hand to land a hit on the bag
+  - Remember, you can't just throw punches wildly; you have about 3 seconds of rest
+    between each hit
+  - You can also block with V to take absolutely no damage
+  - If you perform a block, your enemy will be stunned, making it the perfect opportunity
+    for a counterattack
+  - We can't practice blocking with the bag for obvious reasons...
+  - Let's put what we know into practice. When you're ready, head right and we'll
+    go to the tournament semifinals
+  velocidadEscritura: 0.05
+  sonidoInicio: {fileID: 8300000, guid: 2ca64b0d02dfcc645aa8a7a9a861c510, type: 3}
+  sonidosVoz:
+  - {fileID: 8300000, guid: be91fc8afadfd564bbbdd53f88daffd8, type: 3}
+  - {fileID: 8300000, guid: 4f761c6472a56e6439ee7ccf2481afb6, type: 3}
+  - {fileID: 8300000, guid: 355b010e4cc41a94eafb62ef87fb9363, type: 3}
 --- !u!61 &2074455081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3989,6 +4201,103 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.2554646, y: 18.217802}
   m_EdgeRadius: 0
+--- !u!82 &2074455083
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074455078}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2119835256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4536,6 +4845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e0433d80b455d488fd343216e75257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  vida: 100
+  fuerzaEmpuje: 5
+  tiempoAturdimiento: 0.5
+  cooldownCombate: 3
+  barraDeVidaScript: {fileID: 0}
+  pantallaDerrota: {fileID: 0}
   velocity: 5
   attackPoint: {fileID: 967966806}
   radiusPunch: 0.5
