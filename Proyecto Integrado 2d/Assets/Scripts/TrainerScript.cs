@@ -6,15 +6,14 @@ using TMPro;
 public class NPCInteraction : MonoBehaviour
 {
     [Header("Modo Intro")]
-    [Tooltip("ACTIVAR ESTO EN EL ENEMIGO para que hable solo al iniciar.")]
     public bool esIntroAutomatica = false; 
 
-    [Header("Configuración de UI")]
+    [Header("UI")]
     public GameObject teclaEPrompt; 
     public GameObject panelDialogo;
     public TextMeshProUGUI textoDialogo;
 
-    [Header("Configuración del Diálogo")]
+    [Header("Diálogo")]
     [TextArea(3, 10)]
     public string[] lineasDelDialogo;
     public float velocidadEscritura = 0.05f;
@@ -27,8 +26,8 @@ public class NPCInteraction : MonoBehaviour
     // Referencias
     private PlayerMovement jugadorScript; 
     private EnemyAI enemigoScript; 
+    private GameManager gameManager; // NUEVA REFERENCIA
 
-    // Estado interno
     private bool jugadorCerca;
     private bool dialogoActivo; 
     private int indiceFrase; 
@@ -41,19 +40,18 @@ public class NPCInteraction : MonoBehaviour
         isTyping = false;
         audioSource = GetComponent<AudioSource>();
 
-        // Buscamos los scripts
         jugadorScript = FindFirstObjectByType<PlayerMovement>();
         enemigoScript = GetComponent<EnemyAI>();
+        
+        // Buscamos el GameManager automáticamente
+        gameManager = FindFirstObjectByType<GameManager>();
 
-        // --- CORRECCIÓN AQUÍ ---
         if (esIntroAutomatica)
         {
-            // Si es intro, NO ocultamos el panel. Lo encendemos directamente.
             EmpezarDialogo();
         }
         else
         {
-            // Solo ocultamos la UI si NO es una intro automática
             if(panelDialogo != null) panelDialogo.SetActive(false);
             if(teclaEPrompt != null) teclaEPrompt.SetActive(false);
         }
@@ -61,10 +59,8 @@ public class NPCInteraction : MonoBehaviour
 
     void Update()
     {
-        // Detectamos input (E o Click)
         bool pulsarBoton = Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0);
 
-        // Permitimos avanzar si estamos cerca O si es la intro automática
         if ((jugadorCerca || esIntroAutomatica) && pulsarBoton)
         {
             if (!dialogoActivo)
@@ -81,27 +77,16 @@ public class NPCInteraction : MonoBehaviour
 
     void EmpezarDialogo()
     {
-        // SEGURIDAD: Si se te olvidó escribir frases, avisamos y no hacemos nada
-        if (lineasDelDialogo.Length == 0)
-        {
-            Debug.LogError("ERROR: El NPC no tiene frases en 'Lineas Del Dialogo'. Revisa el Inspector.");
-            return; 
-        }
+        if (lineasDelDialogo.Length == 0) return; 
 
         dialogoActivo = true;
         if(panelDialogo != null) panelDialogo.SetActive(true);
         if(teclaEPrompt != null) teclaEPrompt.SetActive(false);
         
-        // Congelamos personajes
         if (jugadorScript != null) jugadorScript.SetEstadoDialogo(true);
         if (enemigoScript != null) enemigoScript.SetEstadoDialogo(true); 
         
-        // Sonido inicial
-        if (sonidoInicio != null)
-        {
-            audioSource.pitch = 1f; 
-            audioSource.PlayOneShot(sonidoInicio);
-        }
+        if (sonidoInicio != null) { audioSource.pitch = 1f; audioSource.PlayOneShot(sonidoInicio); }
         
         indiceFrase = 0;
         StartCoroutine(EscribirFrase());
@@ -110,15 +95,8 @@ public class NPCInteraction : MonoBehaviour
     void SiguienteFrase()
     {
         indiceFrase++;
-
-        if (indiceFrase < lineasDelDialogo.Length)
-        {
-            StartCoroutine(EscribirFrase());
-        }
-        else
-        {
-            TerminarDialogo();
-        }
+        if (indiceFrase < lineasDelDialogo.Length) StartCoroutine(EscribirFrase());
+        else TerminarDialogo();
     }
 
     IEnumerator EscribirFrase()
@@ -129,17 +107,13 @@ public class NPCInteraction : MonoBehaviour
         foreach (char letra in lineasDelDialogo[indiceFrase].ToCharArray())
         {
             textoDialogo.text += letra; 
-            
             if (sonidosVoz.Length > 0 && letra != ' ')
             {
-                int indiceRandom = Random.Range(0, sonidosVoz.Length);
                 audioSource.pitch = Random.Range(0.9f, 1.1f); 
-                audioSource.PlayOneShot(sonidosVoz[indiceRandom]);
+                audioSource.PlayOneShot(sonidosVoz[Random.Range(0, sonidosVoz.Length)]);
             }
-
             yield return new WaitForSeconds(velocidadEscritura); 
         }
-
         isTyping = false; 
     }
 
@@ -150,46 +124,52 @@ public class NPCInteraction : MonoBehaviour
         isTyping = false; 
     }
 
+    // --- AQUÍ ESTÁ LA MAGIA ---
     void TerminarDialogo()
     {
         dialogoActivo = false;
         if(panelDialogo != null) panelDialogo.SetActive(false);
         isTyping = false;
         
-        // Descongelamos
-        if (jugadorScript != null) jugadorScript.SetEstadoDialogo(false);
-        if (enemigoScript != null) enemigoScript.SetEstadoDialogo(false);
-        
-        // Desactivamos el modo intro para que no se repita
+        // CASO A: Es la Intro del Enemigo
         if (esIntroAutomatica)
         {
             esIntroAutomatica = false;
+            
+            // IMPORTANTE: NO descongelamos aquí. 
+            // Llamamos al GameManager para que lance el "Ready? Fight!"
+            if (gameManager != null)
+            {
+                gameManager.IniciarSecuenciaPelea();
+            }
+            else
+            {
+                // Si no hay GameManager, descongelamos por seguridad
+                Debug.LogWarning("NPC: No encontré GameManager, descongelando manualmente.");
+                DescongelarTodos();
+            }
         }
-        
-        // Solo mostramos la E de nuevo si el jugador sigue cerca
-        if (jugadorCerca && !esIntroAutomatica && teclaEPrompt != null)
+        // CASO B: Es una charla normal con un NPC cualquiera
+        else 
         {
-            teclaEPrompt.SetActive(true);
+            DescongelarTodos();
+            if (jugadorCerca && teclaEPrompt != null) teclaEPrompt.SetActive(true);
         }
     }
+
+    void DescongelarTodos()
+    {
+        if (jugadorScript != null) jugadorScript.SetEstadoDialogo(false);
+        if (enemigoScript != null) enemigoScript.SetEstadoDialogo(false);
+    }
+    // --------------------------
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            jugadorCerca = true;
-            if (!dialogoActivo && !esIntroAutomatica && teclaEPrompt != null) 
-                teclaEPrompt.SetActive(true);
-        }
+        if (collision.CompareTag("Player")) { jugadorCerca = true; if (!dialogoActivo && !esIntroAutomatica && teclaEPrompt) teclaEPrompt.SetActive(true); }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            jugadorCerca = false;
-            if(teclaEPrompt != null) teclaEPrompt.SetActive(false);
-            if (dialogoActivo) TerminarDialogo(); 
-        }
+        if (collision.CompareTag("Player")) { jugadorCerca = false; if(teclaEPrompt) teclaEPrompt.SetActive(false); if (dialogoActivo) TerminarDialogo(); }
     }
 }
