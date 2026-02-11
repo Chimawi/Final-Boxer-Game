@@ -14,28 +14,24 @@ public class PlayerMovement : MonoBehaviour
     public float fuerzaEmpuje = 5f;
     public float tiempoAturdimiento = 0.5f;
 
-    [Header("Cooldowns")]
-    public float cooldownCombate = 3.0f; 
-    private float tiempoSiguienteAtaque = 0f;
-    private float tiempoSiguienteBloqueo = 0f;
-
-    [Header("UI")]
+    [Header("UI - Pantallas")]
     public BarraDeVida barraDeVidaScript; 
-    public GameObject pantallaDerrota; 
+    public GameObject pantallaDerrota;  
+    public GameObject pantallaVictoria; 
 
     [Header("Movimiento")]
     public float velocity = 5f;
 
     [Header("Combate")]
+    public float cooldownCombate = 3.0f; 
+    private float tiempoSiguienteAtaque = 0f;
+    private float tiempoSiguienteBloqueo = 0f;
     public Transform attackPoint;
     public float radiusPunch = 0.5f;
     public LayerMask enemysLayer; 
     
-    // --- NUEVO: AUDIO PASOS ---
     [Header("Audio Pasos")]
-    [Tooltip("Sonidos de pisadas (suelo, madera, etc.)")]
     public AudioClip[] sfxPasos;
-    [Tooltip("Cada cuántos segundos suena un paso (0.3 a 0.5 es normal)")]
     public float ritmoPasos = 0.4f;
     private float siguientePaso = 0f;
 
@@ -45,14 +41,13 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSource;
 
     // ==========================================
-    // 2. ESTADOS Y REFERENCIAS
+    // 2. ESTADOS
     // ==========================================
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer[] partesDelCuerpo; 
     private float inputHorizontal;
     
-    // Estados
     public bool combateIniciado = false; 
     private bool isAttacking = false;
     private bool isBlocking = false; 
@@ -73,7 +68,9 @@ public class PlayerMovement : MonoBehaviour
 
         vidaMaxima = vida;
         if (barraDeVidaScript != null) barraDeVidaScript.InicializarBarra(vida);
+        
         if (pantallaDerrota != null) pantallaDerrota.SetActive(false);
+        if (pantallaVictoria != null) pantallaVictoria.SetActive(false); 
         
         combateIniciado = false; 
     }
@@ -101,32 +98,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // ==========================================
-    // 4. LÓGICA DE MOVIMIENTO Y PASOS
+    // 4. LÓGICA
     // ==========================================
     void GestionarMovimiento()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
-        
-        // Animaciones
         if (inputHorizontal > 0) { animator.SetBool("IsWalking", true); animator.SetBool("IsBackWalking", false); }
         else if (inputHorizontal < 0) { animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", true); }
         else { animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", false); }
 
-        // --- LÓGICA DE SONIDO DE PASOS ---
-        // Si nos estamos moviendo (input distinto de 0)
         if (inputHorizontal != 0)
         {
             if (Time.time >= siguientePaso)
             {
-                ReproducirSonidoAleatorio(sfxPasos, 0.8f, 1.2f, 0.3f); // Volumen bajito (0.3f) para no molestar
+                ReproducirSonidoAleatorio(sfxPasos, 0.8f, 1.2f, 0.3f);
                 siguientePaso = Time.time + ritmoPasos;
             }
         }
     }
 
-    // ==========================================
-    // 5. COMBATE
-    // ==========================================
     public void SetEstadoDialogo(bool estado)
     {
         isTalking = estado;
@@ -166,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
         ReproducirSonidoAleatorio(sfxLanzarGolpe);
     }
     
+    // --- AQUÍ ESTABA EL ERROR, YA CORREGIDO ---
     public void DetectarGolpe()
     {
         Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
@@ -175,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (colision is BoxCollider2D) continue; 
 
+            // 1. Detectar Enemigo
             EnemyAI enemigoScript = colision.GetComponent<EnemyAI>();
             if (enemigoScript != null)
             {
@@ -183,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
                 golpeAcertado = true;
             }
 
+            // 2. Detectar Saco de Boxeo (¡Esto faltaba!)
             SacoBoxeo sacoScript = colision.GetComponent<SacoBoxeo>();
             if (sacoScript != null)
             {
@@ -190,24 +183,20 @@ public class PlayerMovement : MonoBehaviour
                 golpeAcertado = true;
             }
         }
-
+        
         if (golpeAcertado) ReproducirSonidoAleatorio(sfxImpacto);
     }
+    // ------------------------------------------
     
-    // Función auxiliar mejorada para controlar volumen y pitch
     void ReproducirSonidoAleatorio(AudioClip[] clips, float pitchMin = 0.9f, float pitchMax = 1.1f, float volumen = 1.0f)
     {
         if (clips.Length > 0 && audioSource != null)
         {
             audioSource.pitch = Random.Range(pitchMin, pitchMax);
-            // PlayOneShot permite especificar volumen (Scale)
             audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)], volumen);
         }
     }
 
-    // ==========================================
-    // 6. DAÑO, MUERTE Y EVENTOS
-    // ==========================================
     public void FinishAttack() { isAttacking = false; }
     void StartBlock() { isBlocking = true; animator.SetTrigger("Block"); }
     public void FinishBlock() { isBlocking = false; }
@@ -278,13 +267,30 @@ public class PlayerMovement : MonoBehaviour
     
     IEnumerator RutinaDerrota() { yield return new WaitForSeconds(4.0f); if (pantallaDerrota != null) pantallaDerrota.SetActive(true); this.enabled = false; }
     
+    // ==========================================
+    // 5. SISTEMA DE VICTORIA
+    // ==========================================
     public void ActivarVictoria()
     {
-        if (isVictory) return; isVictory = true; 
-        isAttacking = false; isBlocking = false; inputHorizontal = 0; rb.linearVelocity = Vector2.zero;
-        animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", false);
+        if (isVictory) return; 
+        isVictory = true; 
+        
+        isAttacking = false; 
+        isBlocking = false; 
+        inputHorizontal = 0; 
+        rb.linearVelocity = Vector2.zero;
+        
+        animator.SetBool("IsWalking", false); 
+        animator.SetBool("IsBackWalking", false);
+        
         StartCoroutine(RutinaVictoria());
     }
     
-    IEnumerator RutinaVictoria() { yield return new WaitForSeconds(3.0f); animator.SetTrigger("Victory"); }
+    IEnumerator RutinaVictoria() 
+    { 
+        yield return new WaitForSeconds(2.0f); 
+        animator.SetTrigger("Victory"); 
+        yield return new WaitForSeconds(2.0f);
+        if (pantallaVictoria != null) pantallaVictoria.SetActive(true);
+    }
 }

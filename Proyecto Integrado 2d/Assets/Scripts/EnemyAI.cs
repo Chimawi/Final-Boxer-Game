@@ -10,6 +10,10 @@ public class EnemyAI : MonoBehaviour
     [Header("Estadísticas Vitales")]
     public float vida = 100f;
     private float vidaMaxima;
+    
+    [Tooltip("Daño que hace el enemigo al golpear al jugador")]
+    public float dañoAtaque = 1f; // --- NUEVO: VARIABLE DE DAÑO ---
+
     public float fuerzaEmpuje = 5f; 
     public float tiempoAturdimiento = 0.5f; 
 
@@ -22,10 +26,8 @@ public class EnemyAI : MonoBehaviour
     [Header("UI")]
     public BarraDeVida barraDeVidaScript; 
 
-    // --- NUEVO: AUDIO PASOS ---
     [Header("Audio Pasos")]
     public AudioClip[] sfxPasos;
-    [Tooltip("Cada cuántos segundos suena un paso")]
     public float ritmoPasos = 0.4f;
     private float siguientePaso = 0f;
 
@@ -84,17 +86,15 @@ public class EnemyAI : MonoBehaviour
     {
         if (!combateIniciado || vida <= 0 || estaAturdido || estaContraatacando || celebrandoVictoria || enDialogo) return;
         
-        // --- LÓGICA DE SONIDO PASOS ---
-        // Si la velocidad física es mayor a 0.1, nos estamos moviendo
+        // Sonido Pasos
         if (rb.linearVelocity.magnitude > 0.1f)
         {
             if (Time.time >= siguientePaso)
             {
-                ReproducirSonido(sfxPasos, 0.3f); // Volumen bajo para pasos
+                ReproducirSonido(sfxPasos, 0.3f); 
                 siguientePaso = Time.time + ritmoPasos;
             }
         }
-        // -----------------------------
         
         if (jugadorDetectado && playerTransform != null)
         {
@@ -194,7 +194,11 @@ public class EnemyAI : MonoBehaviour
             if (player != null)
             {
                 Vector2 direccionEmpuje = (player.transform.position - transform.position).normalized;
-                player.RecibirDaño(10f, direccionEmpuje, this); 
+                
+                // --- AQUÍ USAMOS LA VARIABLE ---
+                player.RecibirDaño(dañoAtaque, direccionEmpuje, this); 
+                // -------------------------------
+                
                 golpeAcertado = true;
             }
         }
