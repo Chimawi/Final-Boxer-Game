@@ -1523,6 +1523,7 @@ GameObject:
   - component: {fileID: 462446533}
   - component: {fileID: 462446532}
   - component: {fileID: 462446531}
+  - component: {fileID: 462446534}
   m_Layer: 0
   m_Name: Canvas letra E
   m_TagString: Untagged
@@ -1613,6 +1614,103 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!82 &462446534
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462446529}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 387.8313
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,15 +2867,19 @@ MonoBehaviour:
   cooldownAcciones: 3
   puntoDeVision: {fileID: 0}
   barraDeVidaScript: {fileID: 0}
-  jugadorDetectado: 0
-  enDialogo: 0
-  velocidad: 3
-  intervaloCambio: 2
+  delaySonidoGolpe: 0.1
+  sfxLanzarGolpe: []
+  sfxImpacto: []
   attackPoint: {fileID: 0}
   radiusPunch: 0.5
   layerJugador:
     serializedVersion: 2
     m_Bits: 0
+  velocidad: 3
+  intervaloCambio: 2
+  combateIniciado: 0
+  enDialogo: 0
+  jugadorDetectado: 0
 --- !u!1 &886234585
 GameObject:
   m_ObjectHideFlags: 0
@@ -5160,7 +5262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
   esIntroAutomatica: 0
-  teclaEPrompt: {fileID: 987895642}
+  teclaEPrompt: {fileID: 1974643832}
   panelDialogo: {fileID: 196525227}
   textoDialogo: {fileID: 355488973}
   lineasDelDialogo:
@@ -5888,6 +5990,9 @@ MonoBehaviour:
   enemysLayer:
     serializedVersion: 2
     m_Bits: 64
+  combateIniciado: 0
+  sfxLanzarGolpe: []
+  sfxImpacto: []
 --- !u!70 &2119835268
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
