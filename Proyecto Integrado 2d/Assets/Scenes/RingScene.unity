@@ -4380,14 +4380,10 @@ MonoBehaviour:
   vida: 5
   fuerzaEmpuje: 500
   tiempoAturdimiento: 1
-  rangoAtaque: 5.5
+  rangoAtaque: 6
   cooldownAcciones: 3
   puntoDeVision: {fileID: 607589551}
   barraDeVidaScript: {fileID: 971352644}
-  sfxPasos:
-  - {fileID: 8300000, guid: 09f5d310e24b58b4893dd05b18c17ad0, type: 3}
-  - {fileID: 8300000, guid: 8722af880b06b7743a738f65229ab6d3, type: 3}
-  ritmoPasos: 0.6
   delaySonidoGolpe: 0.2
   sfxLanzarGolpe:
   - {fileID: 8300000, guid: 6356e936101bfc24099099e15745e2bb, type: 3}
@@ -6611,7 +6607,6 @@ GameObject:
   - component: {fileID: 1758960020}
   - component: {fileID: 1758960019}
   - component: {fileID: 1758960018}
-  - component: {fileID: 1758960021}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6733,16 +6728,10 @@ MonoBehaviour:
   enemyScript: {fileID: 971352628}
   textoCentro: {fileID: 475374834}
   esperaReady: 1
-  audioSourceSFX: {fileID: 1758960018}
+  audioSource: {fileID: 1758960018}
   vozReady: {fileID: 8300000, guid: 4e88002b1c5e2c24297e9f621d546040, type: 3}
   vozFight: {fileID: 8300000, guid: f27c05b4c0e12d84bb271ad812795857, type: 3}
   sfxCampana: {fileID: 8300000, guid: 9f552406ea730bd46a0a922a5b559010, type: 3}
-  audioSourceMusica: {fileID: 1758960018}
-  musicaPelea: {fileID: 8300000, guid: e5f27b5431e34bd49bada3f3f2a045cc, type: 3}
-  volumenMusica: 0.207
-  audioSourceAmbiente: {fileID: 1758960021}
-  sonidoPublico: {fileID: 8300000, guid: ed0755e642568e44bb7802ea0097cfe7, type: 3}
-  volumenAmbiente: 0.303
 --- !u!224 &1758960020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6762,103 +6751,6 @@ RectTransform:
   m_AnchoredPosition: {x: 959.9999, y: 539.99976}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &1758960021
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758960017}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1802158522
 GameObject:
   m_ObjectHideFlags: 0
@@ -7970,10 +7862,6 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
-      propertyPath: ritmoPasos
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
       propertyPath: fuerzaEmpuje
       value: 50
       objectReference: {fileID: 0}
@@ -7986,25 +7874,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2119835271}
     - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
-      propertyPath: sfxPasos.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
       propertyPath: sfxImpacto.Array.size
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
-      propertyPath: 'sfxPasos.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 09f5d310e24b58b4893dd05b18c17ad0, type: 3}
-    - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
-      propertyPath: 'sfxPasos.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8722af880b06b7743a738f65229ab6d3, type: 3}
-    - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
-      propertyPath: 'sfxPasos.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8c60f7c3529386948bf72a61831a6dc5, type: 3}
     - target: {fileID: 4513886667592061706, guid: 47e9754da9c356a4cb4b996af5665749, type: 3}
       propertyPath: 'sfxImpacto.Array.data[0]'
       value: 
