@@ -2,9 +2,12 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))] // Añadimos AudioSource
+[RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
+    // ==========================================
+    // 1. CONFIGURACIÓN
+    // ==========================================
     [Header("Estadísticas")]
     public float vida = 100f; 
     private float vidaMaxima;
@@ -27,19 +30,30 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     public float radiusPunch = 0.5f;
     public LayerMask enemysLayer; 
-    public bool combateIniciado = false; 
+    
+    // --- NUEVO: AUDIO PASOS ---
+    [Header("Audio Pasos")]
+    [Tooltip("Sonidos de pisadas (suelo, madera, etc.)")]
+    public AudioClip[] sfxPasos;
+    [Tooltip("Cada cuántos segundos suena un paso (0.3 a 0.5 es normal)")]
+    public float ritmoPasos = 0.4f;
+    private float siguientePaso = 0f;
 
-    // --- NUEVO: AUDIO COMBATE ---
     [Header("Audio Combate")]
-    public AudioClip[] sfxLanzarGolpe; // Sonido al aire (Whoosh)
-    public AudioClip[] sfxImpacto;     // Sonido al pegar (Pum!)
+    public AudioClip[] sfxLanzarGolpe; 
+    public AudioClip[] sfxImpacto;     
     private AudioSource audioSource;
 
+    // ==========================================
+    // 2. ESTADOS Y REFERENCIAS
+    // ==========================================
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer[] partesDelCuerpo; 
     private float inputHorizontal;
     
+    // Estados
+    public bool combateIniciado = false; 
     private bool isAttacking = false;
     private bool isBlocking = false; 
     private bool isHurt = false; 
@@ -47,16 +61,20 @@ public class PlayerMovement : MonoBehaviour
     private bool isVictory = false;
     private bool isTalking = false; 
 
+    // ==========================================
+    // 3. CICLO DE VIDA
+    // ==========================================
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>(); // Obtenemos el componente de audio
+        audioSource = GetComponent<AudioSource>(); 
         partesDelCuerpo = GetComponentsInChildren<SpriteRenderer>();
 
         vidaMaxima = vida;
         if (barraDeVidaScript != null) barraDeVidaScript.InicializarBarra(vida);
         if (pantallaDerrota != null) pantallaDerrota.SetActive(false);
+        
         combateIniciado = false; 
     }
 
@@ -74,8 +92,41 @@ public class PlayerMovement : MonoBehaviour
         GestionarMovimiento();
     }
 
-    // ... (El resto de funciones SetEstadoDialogo, GestionarMovimiento, FixedUpdate siguen igual) ...
+    void FixedUpdate()
+    {
+        if (!isHurt && !isDead && !isVictory && !isTalking && combateIniciado)
+        {
+            rb.linearVelocity = new Vector2(inputHorizontal * velocity, rb.linearVelocity.y);
+        }
+    }
 
+    // ==========================================
+    // 4. LÓGICA DE MOVIMIENTO Y PASOS
+    // ==========================================
+    void GestionarMovimiento()
+    {
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        
+        // Animaciones
+        if (inputHorizontal > 0) { animator.SetBool("IsWalking", true); animator.SetBool("IsBackWalking", false); }
+        else if (inputHorizontal < 0) { animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", true); }
+        else { animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", false); }
+
+        // --- LÓGICA DE SONIDO DE PASOS ---
+        // Si nos estamos moviendo (input distinto de 0)
+        if (inputHorizontal != 0)
+        {
+            if (Time.time >= siguientePaso)
+            {
+                ReproducirSonidoAleatorio(sfxPasos, 0.8f, 1.2f, 0.3f); // Volumen bajito (0.3f) para no molestar
+                siguientePaso = Time.time + ritmoPasos;
+            }
+        }
+    }
+
+    // ==========================================
+    // 5. COMBATE
+    // ==========================================
     public void SetEstadoDialogo(bool estado)
     {
         isTalking = estado;
@@ -107,37 +158,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
-    void GestionarMovimiento()
-    {
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        if (inputHorizontal > 0) { animator.SetBool("IsWalking", true); animator.SetBool("IsBackWalking", false); }
-        else if (inputHorizontal < 0) { animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", true); }
-        else { animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", false); }
-    }
 
-    void FixedUpdate()
-    {
-        if (!isHurt && !isDead && !isVictory && !isTalking && combateIniciado)
-        {
-            rb.linearVelocity = new Vector2(inputHorizontal * velocity, rb.linearVelocity.y);
-        }
-    }
-
-    // --- LÓGICA DE ATAQUE CON SONIDO ---
     void StartAttack() 
     { 
         isAttacking = true; 
         animator.SetTrigger("Attack"); 
-        
-        // SONIDO: LANZAMIENTO (WHOOSH)
         ReproducirSonidoAleatorio(sfxLanzarGolpe);
     }
     
     public void DetectarGolpe()
     {
         Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
-        bool golpeAcertado = false; // Para saber si dimos a algo y reproducir sonido de impacto
+        bool golpeAcertado = false; 
 
         foreach (Collider2D colision in objetosGolpeados)
         {
@@ -159,25 +191,23 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // SONIDO: IMPACTO (SOLO SI DIMOS A ALGO)
-        if (golpeAcertado)
-        {
-            ReproducirSonidoAleatorio(sfxImpacto);
-        }
+        if (golpeAcertado) ReproducirSonidoAleatorio(sfxImpacto);
     }
     
-    // --- FUNCIÓN AUXILIAR PARA SONIDOS RANDOM ---
-    void ReproducirSonidoAleatorio(AudioClip[] clips)
+    // Función auxiliar mejorada para controlar volumen y pitch
+    void ReproducirSonidoAleatorio(AudioClip[] clips, float pitchMin = 0.9f, float pitchMax = 1.1f, float volumen = 1.0f)
     {
         if (clips.Length > 0 && audioSource != null)
         {
-            // Variamos ligeramente el tono para que no suene robótico
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+            audioSource.pitch = Random.Range(pitchMin, pitchMax);
+            // PlayOneShot permite especificar volumen (Scale)
+            audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)], volumen);
         }
     }
 
-    // ... (El resto de funciones RecibirDaño, Morir, etc. siguen igual, cópialas del anterior si las borraste) ...
+    // ==========================================
+    // 6. DAÑO, MUERTE Y EVENTOS
+    // ==========================================
     public void FinishAttack() { isAttacking = false; }
     void StartBlock() { isBlocking = true; animator.SetTrigger("Block"); }
     public void FinishBlock() { isBlocking = false; }
@@ -196,6 +226,7 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(RutinaEmpujeYMuerte(direccionEmpuje));
         StartCoroutine(EfectoParpadeo(Color.red)); 
     }
+    
     public void RecibirAturdimientoPorBloqueo() { if (!isDead && !isVictory) StartCoroutine(RutinaStunAmarillo()); }
 
     IEnumerator RutinaStunAmarillo()
@@ -206,12 +237,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(tiempoAturdimiento + 0.5f); 
         isHurt = false; rb.linearVelocity = Vector2.zero;
     }
+    
     IEnumerator EfectoBloqueo(Vector2 direccion)
     {
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(new Vector2(direccion.x, 0).normalized * (fuerzaEmpuje / 2), ForceMode2D.Impulse); 
         yield return null; 
     }
+    
     IEnumerator RutinaEmpujeYMuerte(Vector2 direccion)
     {
         isHurt = true; isAttacking = false; isBlocking = false;
@@ -220,6 +253,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(tiempoAturdimiento);
         if (vida <= 0) Morir(); else { isHurt = false; rb.linearVelocity = Vector2.zero; }
     }
+    
     IEnumerator EfectoParpadeo(Color colorObjetivo)
     {
         Color colorNormal = Color.white; 
@@ -231,6 +265,7 @@ public class PlayerMovement : MonoBehaviour
         }
         foreach (SpriteRenderer p in partesDelCuerpo) if(p) p.color = colorNormal;
     }
+    
     void Morir()
     {
         if (isDead) return; isDead = true; 
@@ -240,7 +275,9 @@ public class PlayerMovement : MonoBehaviour
         foreach (EnemyAI e in listaEnemigos) if (e != null) e.ActivarVictoria();
         StartCoroutine(RutinaDerrota());
     }
+    
     IEnumerator RutinaDerrota() { yield return new WaitForSeconds(4.0f); if (pantallaDerrota != null) pantallaDerrota.SetActive(true); this.enabled = false; }
+    
     public void ActivarVictoria()
     {
         if (isVictory) return; isVictory = true; 
@@ -248,5 +285,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsWalking", false); animator.SetBool("IsBackWalking", false);
         StartCoroutine(RutinaVictoria());
     }
+    
     IEnumerator RutinaVictoria() { yield return new WaitForSeconds(3.0f); animator.SetTrigger("Victory"); }
 }

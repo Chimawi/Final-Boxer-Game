@@ -15,18 +15,26 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textoCentro; 
     public float esperaReady = 2.0f;   
 
-    [Header("Sonidos (SFX)")]
-    public AudioSource audioSource;
+    [Header("Canal 1: Efectos (SFX)")]
+    public AudioSource audioSourceSFX; 
     public AudioClip vozReady; 
     public AudioClip vozFight;  
     public AudioClip sfxCampana;
 
+    [Header("Canal 2: Música")]
+    public AudioSource audioSourceMusica; 
+    public AudioClip musicaPelea;
+    [Range(0f, 1f)] public float volumenMusica = 0.5f;
+
+    [Header("Canal 3: Ambiente (Público)")]
+    public AudioSource audioSourceAmbiente; 
+    public AudioClip sonidoPublico;         
+    [Range(0f, 1f)] public float volumenAmbiente = 0.4f; 
+
     void Start()
     {
-        // 1. Congelamos al inicio
         CongelarPersonajes(true);
 
-        // 2. Si NO hay intro del enemigo, empezamos nosotros
         if (!esperarIntroEnemigo)
         {
             IniciarSecuenciaPelea();
@@ -47,7 +55,7 @@ public class GameManager : MonoBehaviour
             textoCentro.color = Color.yellow;
         }
         
-        ReproducirSonido(vozReady);
+        ReproducirSFX(vozReady);
         yield return new WaitForSeconds(esperaReady);
 
         // --- FASE 2: FIGHT!! ---
@@ -57,29 +65,52 @@ public class GameManager : MonoBehaviour
             textoCentro.color = Color.red; 
         }
         
-        ReproducirSonido(vozFight);
-        ReproducirSonido(sfxCampana);
+        ReproducirSFX(vozFight);
+        ReproducirSFX(sfxCampana);
+
+        // --- AQUI ACTIVAMOS EL LOOP (BUCLE) ---
+        
+        // 1. Música en Bucle
+        if (audioSourceMusica != null && musicaPelea != null)
+        {
+            audioSourceMusica.clip = musicaPelea;
+            audioSourceMusica.volume = volumenMusica;
+            
+            // ESTA LÍNEA HACE QUE SE REPITA SIEMPRE
+            audioSourceMusica.loop = true; 
+            
+            audioSourceMusica.Play();
+        }
+
+        // 2. Público en Bucle
+        if (audioSourceAmbiente != null && sonidoPublico != null)
+        {
+            audioSourceAmbiente.clip = sonidoPublico;
+            audioSourceAmbiente.volume = volumenAmbiente;
+            
+            // ESTA LÍNEA HACE QUE SE REPITA SIEMPRE
+            audioSourceAmbiente.loop = true; 
+            
+            audioSourceAmbiente.Play();
+        }
+        // -------------------------------------
 
         // --- FASE 3: ¡ACCIÓN! ---
-        
-        // 1. Quitamos el estado de diálogo
         CongelarPersonajes(false); 
 
-        // 2. ¡IMPORTANTE! Activamos la variable de combate en los scripts
-        // (Estas son las líneas que faltaban)
         if (playerScript != null) playerScript.combateIniciado = true;
-        if (enemyScript != null) enemyScript.combateIniciado = true;
-        if (enemyScript != null) enemyScript.IniciarCombate(); // Aseguramos activación extra
-
-        Debug.Log("GameManager: ¡A PELEAR! Variables activadas.");
+        if (enemyScript != null) {
+             enemyScript.combateIniciado = true;
+             enemyScript.IniciarCombate();
+        }
 
         yield return new WaitForSeconds(1.0f);
         if (textoCentro != null) textoCentro.text = "";
     }
 
-    void ReproducirSonido(AudioClip clip)
+    void ReproducirSFX(AudioClip clip)
     {
-        if (audioSource != null && clip != null) audioSource.PlayOneShot(clip);
+        if (audioSourceSFX != null && clip != null) audioSourceSFX.PlayOneShot(clip);
     }
 
     void CongelarPersonajes(bool estado)
