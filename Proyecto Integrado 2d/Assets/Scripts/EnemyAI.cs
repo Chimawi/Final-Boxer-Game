@@ -25,6 +25,9 @@ public class EnemyAI : MonoBehaviour
     public BarraDeVida barraDeVidaScript; 
 
     [Header("Audio Combate (Arrays)")]
+    [Tooltip("Tiempo en segundos que tarda en sonar el 'Whoosh' tras iniciar la animación")]
+    public float delaySonidoGolpe = 0.1f; // --- NUEVO: VARIABLE DE RETRASO ---
+
     [Tooltip("Arrastra aquí 2 o 3 sonidos de 'Aire/Whoosh'")]
     public AudioClip[] sfxLanzarGolpe; 
     [Tooltip("Arrastra aquí 2 o 3 sonidos de 'Impacto/Golpe Fuerte'")]
@@ -38,7 +41,7 @@ public class EnemyAI : MonoBehaviour
     
     [Header("Movimiento")]
     public float velocidad = 3.0f;
-    public float intervaloCambio = 2.0f; // Cada cuánto cambia de dirección al patrullar
+    public float intervaloCambio = 2.0f; 
 
     // ==========================================
     // 2. VARIABLES INTERNAS Y ESTADOS
@@ -49,8 +52,8 @@ public class EnemyAI : MonoBehaviour
     private Transform playerTransform; 
 
     // Estados de Control
-    public bool combateIniciado = false; // Controlado por GameManager
-    public bool enDialogo = false;       // Controlado por NPCInteraction
+    public bool combateIniciado = false; 
+    public bool enDialogo = false;       
     
     // Estados de Acción
     private bool estaAturdido = false; 
@@ -66,7 +69,6 @@ public class EnemyAI : MonoBehaviour
     // ==========================================
     void Awake()
     {
-        // Inicializamos referencias antes que nadie (Evita NullReference)
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>(); 
@@ -75,18 +77,14 @@ public class EnemyAI : MonoBehaviour
         vidaMaxima = vida;
         if (barraDeVidaScript != null) barraDeVidaScript.InicializarBarra(vida);
         
-        // Importante: Empezamos congelados
         combateIniciado = false; 
-        
         ElegirNuevaDireccionAleatoria();
     }
 
     void Update()
     {
-        // CANDADO MAESTRO: Si pasa cualquiera de esto, el enemigo NO piensa ni se mueve.
         if (!combateIniciado || vida <= 0 || estaAturdido || estaContraatacando || celebrandoVictoria || enDialogo) return;
         
-        // Lógica de IA
         if (jugadorDetectado && playerTransform != null)
         {
             ComportamientoCombate();
@@ -98,25 +96,20 @@ public class EnemyAI : MonoBehaviour
     }
 
     // ==========================================
-    // 4. CONTROL EXTERNO (GameManager / Diálogo)
+    // 4. CONTROL EXTERNO
     // ==========================================
-    
-    // Llamado por GameManager cuando termina la cuenta atrás
     public void IniciarCombate()
     {
         combateIniciado = true;
-        // Pequeño reset para que no ataque en el milisegundo 0
         tiempoSiguienteAccion = Time.time + 1.0f;
     }
 
-    // Llamado por NPCInteraction durante la intro
     public void SetEstadoDialogo(bool estado)
     {
         enDialogo = estado;
 
         if (enDialogo)
         {
-            // Frenado total
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsBackWalking", false);
@@ -126,7 +119,6 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // Al salir del diálogo, reactivamos patrulla
             ElegirNuevaDireccionAleatoria();
         }
     }
@@ -136,11 +128,8 @@ public class EnemyAI : MonoBehaviour
     // ==========================================
     void ComportamientoCombate()
     {
-        // Calculamos distancia
         Vector2 miPosicion = (puntoDeVision != null) ? puntoDeVision.position : transform.position;
         Vector2 posicionJugador = playerTransform.position;
-        
-        // Ajuste para detectar el centro del collider del jugador
         Collider2D colliderJugador = playerTransform.GetComponent<Collider2D>();
         if (colliderJugador != null) posicionJugador = colliderJugador.bounds.center;
 
@@ -148,13 +137,9 @@ public class EnemyAI : MonoBehaviour
         
         if (distancia <= rangoAtaque)
         {
-            // RANGO DE ATAQUE: Nos quedamos quietos y decidimos
             rb.linearVelocity = Vector2.zero;
             DetenerAnimacionesMovimiento();
-            
-            // Miramos siempre al jugador
             direccionMovimiento = (int)Mathf.Sign(playerTransform.position.x - transform.position.x);
-            // (Aquí podrías rotar el sprite si usas FlipX, pero tu animador usa BlendTrees probablemente)
 
             if (Time.time >= tiempoSiguienteAccion)
             {
@@ -163,7 +148,6 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // RANGO DE PERSECUCIÓN
             PerseguirJugador();
         }
     }
@@ -172,12 +156,11 @@ public class EnemyAI : MonoBehaviour
     {
         tiempoSiguienteAccion = Time.time + cooldownAcciones;
         
-        // 70% Probabilidad de Atacar, 30% Bloquear
         if (Random.value > 0.3f) 
         {
             animator.SetTrigger("Attack");
-            // AUDIO: Sonido de esfuerzo/aire al iniciar el golpe
-            ReproducirSonido(sfxLanzarGolpe);
+            // --- CAMBIO: Usamos la rutina con retraso en vez del sonido directo ---
+            StartCoroutine(RutinaSonidoLanzamiento());
         }
         else 
         {
@@ -198,7 +181,6 @@ public class EnemyAI : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(direccionMovimiento * velocidad, rb.linearVelocity.y);
         ActualizarAnimacionesMovimiento();
-        
         tiempoTranscurrido += Time.deltaTime;
         if (tiempoTranscurrido >= intervaloCambio)
         {
@@ -211,7 +193,6 @@ public class EnemyAI : MonoBehaviour
     // 6. SISTEMA DE COMBATE Y FÍSICAS
     // ==========================================
 
-    // Llamado por evento de Animación en el frame del golpe
     public void DetectarGolpe()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, layerJugador);
@@ -219,55 +200,58 @@ public class EnemyAI : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit is BoxCollider2D) continue; // Ignoramos triggers si es necesario
+            if (hit is BoxCollider2D) continue; 
 
             PlayerMovement player = hit.GetComponent<PlayerMovement>();
             if (player != null)
             {
                 Vector2 direccionEmpuje = (player.transform.position - transform.position).normalized;
-                player.RecibirDaño(1f, direccionEmpuje, this); // 'this' pasa la referencia del enemigo
+                player.RecibirDaño(1f, direccionEmpuje, this); 
                 golpeAcertado = true;
             }
         }
 
-        // AUDIO: Si impactamos, suena el golpe fuerte (superpuesto al anterior)
         if (golpeAcertado)
         {
             ReproducirSonido(sfxImpacto);
         }
     }
 
-    // Función auxiliar para gestionar el audio
     void ReproducirSonido(AudioClip[] clips)
     {
         if (clips != null && clips.Length > 0 && audioSource != null)
         {
             AudioClip clipElegido = clips[Random.Range(0, clips.Length)];
-            audioSource.pitch = Random.Range(0.9f, 1.1f); // Variación de tono humana
-            audioSource.PlayOneShot(clipElegido); // Permite solapamiento de sonidos
+            audioSource.pitch = Random.Range(0.9f, 1.1f); 
+            audioSource.PlayOneShot(clipElegido); 
         }
     }
 
-    // Llamado cuando el jugador nos pega a nosotros
+    // --- NUEVO: Rutina para esperar un poquito antes de sonar ---
+    IEnumerator RutinaSonidoLanzamiento()
+    {
+        // Esperamos el tiempo definido en el Inspector
+        yield return new WaitForSeconds(delaySonidoGolpe);
+        
+        // Ahora sí, suena el aire
+        ReproducirSonido(sfxLanzarGolpe);
+    }
+    // ------------------------------------------------------------
+
     public void RecibirDaño(float daño, Vector2 direccionEmpuje, PlayerMovement atacante = null)
     {
         if (vida <= 0) return;
 
-        // Si estamos bloqueando...
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Block"))
         {
-            Debug.Log("Enemigo: ¡Bloqueado!");
             if (atacante != null) atacante.RecibirAturdimientoPorBloqueo();
             
             StartCoroutine(EfectoBloqueo(direccionEmpuje));
-            
-            // Iniciamos contraataque
             float direccionHaciaJugador = -Mathf.Sign(direccionEmpuje.x);
             StartCoroutine(RutinaContraataque(direccionHaciaJugador));
             return;
         }
 
-        // Si nos entra el golpe...
         vida -= daño;
         if (barraDeVidaScript != null) barraDeVidaScript.CambiarVidaActual(vida, vidaMaxima);
 
@@ -281,15 +265,14 @@ public class EnemyAI : MonoBehaviour
     }
 
     // ==========================================
-    // 7. CORRUTINAS (Animaciones temporales)
+    // 7. CORRUTINAS
     // ==========================================
 
     IEnumerator RutinaContraataque(float dirX)
     {
         estaContraatacando = true; 
-        yield return new WaitForSeconds(0.2f); // Pequeña pausa dramática tras bloquear
+        yield return new WaitForSeconds(0.2f); 
 
-        // 1. Dash hacia el jugador
         float velocidadAtaque = velocidad * 2f; 
         rb.linearVelocity = new Vector2(dirX * velocidadAtaque, rb.linearVelocity.y);
 
@@ -298,19 +281,17 @@ public class EnemyAI : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
 
-        // 2. Frenar y Golpear
         rb.linearVelocity = Vector2.zero;
         DetenerAnimacionesMovimiento(); 
         
         animator.ResetTrigger("Block"); 
         animator.SetTrigger("Attack");
         
-        // AUDIO: Sonido de ataque en el contraataque
-        ReproducirSonido(sfxLanzarGolpe);
+        // --- CAMBIO: Usamos también el retraso en el contraataque ---
+        StartCoroutine(RutinaSonidoLanzamiento());
 
-        yield return new WaitForSeconds(0.8f); // Tiempo que dura la animación de ataque
+        yield return new WaitForSeconds(0.8f); 
         estaContraatacando = false; 
-        
         tiempoSiguienteAccion = Time.time + cooldownAcciones;
     }
 
@@ -374,14 +355,11 @@ public class EnemyAI : MonoBehaviour
     {
         animator.SetTrigger("Die");
         estaAturdido = true; 
-        
         GetComponent<Collider2D>().enabled = false; 
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static; 
-        
         PlayerMovement player = FindFirstObjectByType<PlayerMovement>(); 
         if (player != null) player.ActivarVictoria();
-        
         this.enabled = false; 
     }
 
@@ -389,13 +367,11 @@ public class EnemyAI : MonoBehaviour
     {
         if (celebrandoVictoria) return;
         celebrandoVictoria = true; 
-
         StopAllCoroutines(); 
         rb.linearVelocity = Vector2.zero;
         DetenerAnimacionesMovimiento();
         animator.ResetTrigger("Attack");
         animator.ResetTrigger("Block");
-
         StartCoroutine(RutinaVictoriaEnemigo());
     }
 
@@ -423,7 +399,6 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("IsBackWalking", false); 
     }
 
-    // Detección de Trigger (Visión)
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) 
@@ -442,7 +417,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Gizmos para ver los rangos en el editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
