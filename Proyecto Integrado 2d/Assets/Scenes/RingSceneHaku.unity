@@ -260,8 +260,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281808825
-  m_fontColor: {r: 0.7264151, g: 0.21586864, b: 0.21586864, a: 1}
+    rgba: 4292472055
+  m_fontColor: {r: 0.9686275, g: 0.92549026, b: 0.85098046, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3714,7 +3714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &712347534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5118,7 +5118,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281808825
-  m_fontColor: {r: 0.7254902, g: 0.21568629, b: 0.21568629, a: 1}
+  m_fontColor: {r: 0.6603774, g: 0.23798506, b: 0.23798506, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6715,8 +6715,11 @@ MonoBehaviour:
   panelDialogo: {fileID: 712347533}
   textoDialogo: {fileID: 1430946439}
   lineasDelDialogo:
-  - Wachinazo
-  - Terrible
+  - 'What''s up, baldy? '
+  - If you made it this far, I guess you're not completely useless. Althought, your
+    last opponent didn't look very sharp
+  - Know this, the ring is my battlefield, and every blow cuts like a katana. Come
+    and taste defeat...Owari da!!
   velocidadEscritura: 0.05
   sonidoInicio: {fileID: 8300000, guid: f197c1f2293c745449deedc7d3daa918, type: 3}
   sonidosVoz:
@@ -6836,7 +6839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1668644406
 MonoBehaviour:
   m_ObjectHideFlags: 0
