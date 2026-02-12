@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
             if (enemigoScript != null)
             {
                 Vector2 direccionEmpuje = (enemigoScript.transform.position - transform.position).normalized;
-                enemigoScript.RecibirDaño(20f, direccionEmpuje, this);
+                enemigoScript.RecibirDaño(1f, direccionEmpuje, this);
                 golpeAcertado = true;
             }
 
