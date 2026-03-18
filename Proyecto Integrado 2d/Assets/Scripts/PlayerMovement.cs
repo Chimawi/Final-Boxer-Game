@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Necesario para componentes de Interfaz
 
 [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
@@ -18,6 +19,12 @@ public class PlayerMovement : MonoBehaviour
     public BarraDeVida barraDeVidaScript; 
     public GameObject pantallaDerrota;  
     public GameObject pantallaVictoria; 
+
+    [Header("UI - Cooldowns Progresivos")]
+    public Image iconoAtaque; 
+    public Image iconoBloqueo;
+    [Tooltip("Opacidad mínima cuando se acaba de usar la habilidad")]
+    [Range(0, 1)] public float opacidadMinima = 0.2f; 
 
     [Header("Movimiento")]
     public float velocity = 5f;
@@ -77,6 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Actualizamos la UI en cada frame para que la recarga sea fluida
+        ActualizarVisualizacionCooldowns();
+
         if (!combateIniciado || isDead || isHurt || isVictory || isTalking) return;
 
         if (isAttacking || isBlocking)
@@ -98,7 +108,40 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // ==========================================
-    // 4. LÓGICA
+    // 4. LÓGICA DE UI (RECARGA PROGRESIVA)
+    // ==========================================
+    void ActualizarVisualizacionCooldowns()
+    {
+        // Lógica para el Icono de Ataque
+        if (iconoAtaque != null)
+        {
+            // Calculamos el progreso de 0 a 1 (1 es cargado al 100%)
+            float progreso = 1 - Mathf.Clamp01((tiempoSiguienteAtaque - Time.time) / cooldownCombate);
+            
+            // Relleno vertical suave
+            iconoAtaque.fillAmount = progreso;
+
+            // Opacidad progresiva usando Lerp
+            Color c = iconoAtaque.color;
+            c.a = Mathf.Lerp(opacidadMinima, 1.0f, progreso);
+            iconoAtaque.color = c;
+        }
+
+        // Lógica para el Icono de Bloqueo
+        if (iconoBloqueo != null)
+        {
+            float progresoBloqueo = 1 - Mathf.Clamp01((tiempoSiguienteBloqueo - Time.time) / cooldownCombate);
+            
+            iconoBloqueo.fillAmount = progresoBloqueo;
+
+            Color c = iconoBloqueo.color;
+            c.a = Mathf.Lerp(opacidadMinima, 1.0f, progresoBloqueo);
+            iconoBloqueo.color = c;
+        }
+    }
+
+    // ==========================================
+    // 5. LÓGICA DE MOVIMIENTO Y COMBATE
     // ==========================================
     void GestionarMovimiento()
     {
@@ -156,7 +199,6 @@ public class PlayerMovement : MonoBehaviour
         ReproducirSonidoAleatorio(sfxLanzarGolpe);
     }
     
-    // --- AQUÍ ESTABA EL ERROR, YA CORREGIDO ---
     public void DetectarGolpe()
     {
         Collider2D[] objetosGolpeados = Physics2D.OverlapCircleAll(attackPoint.position, radiusPunch, enemysLayer);
@@ -166,7 +208,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (colision is BoxCollider2D) continue; 
 
-            // 1. Detectar Enemigo
             EnemyAI enemigoScript = colision.GetComponent<EnemyAI>();
             if (enemigoScript != null)
             {
@@ -175,7 +216,6 @@ public class PlayerMovement : MonoBehaviour
                 golpeAcertado = true;
             }
 
-            // 2. Detectar Saco de Boxeo (¡Esto faltaba!)
             SacoBoxeo sacoScript = colision.GetComponent<SacoBoxeo>();
             if (sacoScript != null)
             {
@@ -186,7 +226,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (golpeAcertado) ReproducirSonidoAleatorio(sfxImpacto);
     }
-    // ------------------------------------------
     
     void ReproducirSonidoAleatorio(AudioClip[] clips, float pitchMin = 0.9f, float pitchMax = 1.1f, float volumen = 1.0f)
     {
@@ -267,22 +306,16 @@ public class PlayerMovement : MonoBehaviour
     
     IEnumerator RutinaDerrota() { yield return new WaitForSeconds(4.0f); if (pantallaDerrota != null) pantallaDerrota.SetActive(true); this.enabled = false; }
     
-    // ==========================================
-    // 5. SISTEMA DE VICTORIA
-    // ==========================================
     public void ActivarVictoria()
     {
         if (isVictory) return; 
         isVictory = true; 
-        
         isAttacking = false; 
         isBlocking = false; 
         inputHorizontal = 0; 
         rb.linearVelocity = Vector2.zero;
-        
         animator.SetBool("IsWalking", false); 
         animator.SetBool("IsBackWalking", false);
-        
         StartCoroutine(RutinaVictoria());
     }
     
