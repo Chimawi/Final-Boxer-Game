@@ -2983,7 +2983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216.66, y: -75}
+  m_AnchoredPosition: {x: 141.79, y: -68.555}
   m_SizeDelta: {x: 283.5886, y: 171.2927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504964311
@@ -3008,15 +3008,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "A GAME BY\n\nLucia Llanes Julian \nFausto Piquioni Acu\xF1a"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 89e5dc78ad911654499ad9d789dd7f0e, type: 2}
-  m_sharedMaterial: {fileID: 3040526310139127466, guid: 89e5dc78ad911654499ad9d789dd7f0e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8caa82c2de7dacc4698dbe26f1a4d419, type: 2}
+  m_sharedMaterial: {fileID: -2968349990043459318, guid: 8caa82c2de7dacc4698dbe26f1a4d419, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279838190
-  m_fontColor: {r: 0.93207544, g: 0.14506182, b: 0.096724704, a: 1}
+    rgba: 4280824800
+  m_fontColor: {r: 0.8792453, g: 0.20055553, b: 0.15760048, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3071,7 +3071,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -85.56711, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5176,8 +5176,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280916217
-  m_fontColor: {r: 0.97735846, g: 0.5945522, b: 0.16043426, a: 1}
+    rgba: 4283480044
+  m_fontColor: {r: 0.9245283, g: 0.7184502, b: 0.3122463, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5883,14 +5883,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1c8965aa04ac04408a33fb1d12e520c, type: 2}
-  m_sharedMaterial: {fileID: -6962400496231563408, guid: a1c8965aa04ac04408a33fb1d12e520c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8caa82c2de7dacc4698dbe26f1a4d419, type: 2}
+  m_sharedMaterial: {fileID: -2968349990043459318, guid: 8caa82c2de7dacc4698dbe26f1a4d419, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281808825
+    rgba: 4282203560
   m_fontColor: {r: 0.6603774, g: 0.23798506, b: 0.23798506, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
